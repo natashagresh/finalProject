@@ -1,4 +1,5 @@
 var SpotifyWebApi = require('spotify-web-api-node');
+var scope = ['playlist-read-private', 'playlist-read-collaborative', 'playlist-modify-public','playlist-modify-private', 'steaming', 'user-follow-modify', 'user-follow-read', 'user-library-read'];
 
 
 var spotifyApi = new SpotifyWebApi({
@@ -7,3 +8,11 @@ var spotifyApi = new SpotifyWebApi({
   redirectUri : 'http://localhost:3000/'
 });
 
+var authorizeURL = spotifyApi.createAuthorizeURL(scopes);
+
+// spotifyApi.getArtistAlbums(' ', {limit: 10, offset: 20})
+//   .then(function(data) {
+//     console.log('Album information', data.body);
+//   }, function(err) {
+//     console.error(err);
+//   });

@@ -18,5 +18,11 @@ I hope to use:
 - Mongo
 - Express
 
+**WireFrames**
+![wireframes](/public/wireFrames.png)
+
+**Trello**
+[Here](https://trello.com/b/lLx9Ld0z/final-project)
+
 
 
