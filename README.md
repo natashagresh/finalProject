@@ -19,7 +19,7 @@ I hope to use:
 - Express
 
 **WireFrames**
-![wireframes](/public/wireFrames.png)
+![wireframes](/public/WireFrames.png)
 
 **Trello**
 [Here](https://trello.com/b/lLx9Ld0z/final-project)
