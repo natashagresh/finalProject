@@ -1,6 +1,6 @@
 # finalProject
 
-##**Basic Idea/Description**
+##**Description**
 
 <!-- My Final Project Idea is to use the Spotify API. Ideas/implementing only one of these:  -->
 <!-- - Either give the top 20 music in realtime and let you play it.  -->
