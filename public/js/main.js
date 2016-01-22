@@ -1,6 +1,7 @@
 console.log('connected');
 
 $(document).ready(function(){
+  
   var $body = $('body');
 
   $('#authorize').on('click', function(event){
@@ -19,6 +20,7 @@ $(document).ready(function(){
     });
   })
   
+  // TODO this should actually show the user but will change
   $('#playlists').on('click', function(event){
     $.ajax({
       url: '/api/playlists',
@@ -38,12 +40,12 @@ $(document).ready(function(){
         console.log(results)
         var displayReleases = results.body.albums.items;
         displayReleases.forEach(function(element) {
-        var anchorReleases = $('<p>')
-        anchorReleases.text(element.name + ', ' + element.type)
-        $body.append(anchorReleases)
-      })
-    })
-  })
+          var anchorReleases = $('<p>')
+          anchorReleases.text(element.name + ', ' + element.type)
+          $body.append(anchorReleases)
+        });
+    });
+  });
 
   $('#categories').on('click', function(event){
     $.ajax({
@@ -62,26 +64,28 @@ $(document).ready(function(){
           type: "GET",
           dataType: 'json'
         }).done(function(results){
-          // var playlists = results.body.playlists.items[0].href
+          console.log(results);
           var playlists = results.body.playlists.items[0].id
-          // var playlistsImage = results.body.playlists.items[0].images[0].url
+
+          var uri = results.body.playlists.items[0].uri
           var playlistName = results.body.playlists.items[0].name
+
           console.log(results.body.playlists.items[0].id);
-          // console.log(playlistsImage);
           console.log(playlistName);
+
+          // var displayPlaylists = results.body.playlists.items;
+          // displayPlaylists.forEach(function(element) {
+          // var anchorPlaylistsOne = $('<iframe>').attr('src', playlists)
+          // anchorPlaylistsOne.text(element.uri);
+          // $body.append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+
           var $anchorplaylistName = $('<p>');
           var $anchorplaylists = $('<iframe>').attr('src', playlists)
-          // var $anchorplaylistsImage = $('<img>').attr('src')
-          // var $anchorplaylistsImage = playlistsImage
           $anchorplaylistName.text(playlistName)
-          $body.append($anchorplaylistName)
-          // $body.append('<img src='+$anchorplaylistsImage+'/>')
-          // $anchorplaylists.text(playlists)
-          // $body.append($anchorplaylists)  
-          $body.append('<iframe src=https://embed.spotify.com/?uri=spotify:track:'+playlists+'width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');      
-          // });
-          //PROCEDURE TO APPEND PLAYLISTS TO DOM
-// <iframe src="https://embed.spotify.com/?uri=spotify:track:6LBZwjKY0VZLoe79qeGcCF" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+          $body.append($anchorplaylistName) 
+          console.log(playlists);
+          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');      
+         // })
 
         });
       });
@@ -94,5 +98,6 @@ $(document).ready(function(){
       });
     })
   })
+
 
 })
