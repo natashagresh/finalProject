@@ -1,4 +1,5 @@
 var SpotifyWebApi = require('spotify-web-api-node');
+var spotify = require('spotify');
 var express = require('express');
 var app = express();
 var session = require('express-session');
@@ -102,7 +103,7 @@ app.get('/api/oauth', function(req, res) {
 
  // Retrieve new releases
   app.get('/api/releases', function(req,res){
-    spotifyApi.getNewReleases({ limit : 5, offset: 0, country: 'SE' }).then(function(results) {
+    spotifyApi.getNewReleases({ limit : 6, offset: 0, country: 'SE' }).then(function(results) {
       res.json(results)
     }, function(error) {
        console.log("Something went wrong!", error);
@@ -113,10 +114,9 @@ app.get('/api/oauth', function(req, res) {
 // Get a List of Categories
 app.get('/api/categories', function(req, res){
   spotifyApi.getCategories({
-      limit : 5,
+      limit : 10,
       offset: 0,
-      country: 'SE',
-      locale: 'sv_SE'
+      country: 'US',
   }).then(function(results) {
     res.json(results)
   }, function(error) {
@@ -127,9 +127,10 @@ app.get('/api/categories', function(req, res){
 app.get('/api/getplaylists/:category', function(req, res) {
   console.log('HITTING ROUTE');
   spotifyApi.getPlaylistsForCategory(req.params.category, {
-
+    country: 'US',
+    limit: 6
   }).then(function(data) {
-    console.log('PLAYLISTS FROM CATEGORY ', data);
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
     res.json(data);
     res.end();
   }, function(error) {
