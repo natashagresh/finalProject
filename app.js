@@ -103,7 +103,7 @@ app.get('/api/oauth', function(req, res) {
 
  // Retrieve new releases
   app.get('/api/releases', function(req,res){
-    spotifyApi.getNewReleases({ limit : 6, offset: 0, country: 'SE' }).then(function(results) {
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'US' }).then(function(results) {
       res.json(results)
     }, function(error) {
        console.log("Something went wrong!", error);

@@ -25,7 +25,7 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
-    console.log(results)
+        console.log(results)
     });
   })
 
@@ -35,7 +35,13 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
-      console.log(results)
+        console.log(results)
+        var displayReleases = results.body.albums.items;
+        displayReleases.forEach(function(element) {
+        var anchorReleases = $('<p>')
+        anchorReleases.text(element.name + ', ' + element.type)
+        $body.append(anchorReleases)
+      })
     })
   })
 
@@ -84,6 +90,7 @@ $(document).ready(function(){
         var anchorCategories = $('<p>')
         anchorCategories.text(element.id);
         $categoriesContainer.append(anchorCategories)
+
       });
     })
   })
