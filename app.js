@@ -61,9 +61,7 @@ app.get('/', function(req, res) {
 app.get('/authorizespotify', function(req, res){
     if (req.query.code) {
     var code = req.query.code;
-    console.log('CODE ', typeof(code));
     spotifyApi.authorizationCodeGrant(code, function(err, results){
-      console.log('RESULTS ', results);
       if (err) {
         console.log(err);
       }
@@ -78,9 +76,8 @@ app.get('/authorizespotify', function(req, res){
         if(err) {
           console.log(err);
         }
-        console.log(results);
 
-        res.render('index');
+        res.render('authorize');
       })
     }); 
   }
@@ -107,13 +104,38 @@ app.get('/api/oauth', function(req, res) {
   app.get('/api/releases', function(req,res){
     spotifyApi.getNewReleases({ limit : 5, offset: 0, country: 'SE' }).then(function(results) {
       res.json(results)
-      console.log('RESULTS', results);
-      // done();
     }, function(error) {
        console.log("Something went wrong!", error);
        res.end();
     })     
   });
+
+// Get a List of Categories
+app.get('/api/categories', function(req, res){
+  spotifyApi.getCategories({
+      limit : 5,
+      offset: 0,
+      country: 'SE',
+      locale: 'sv_SE'
+  }).then(function(results) {
+    res.json(results)
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+app.get('/api/getplaylists/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  })
+})  
 
 app.listen(process.env.PORT || 3000);
 
