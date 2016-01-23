@@ -78,7 +78,7 @@ app.get('/authorizespotify', function(req, res){
           console.log(err);
         }
 
-        res.render('authorize');
+        res.render('mainpage');
       })
     }); 
   }
@@ -89,6 +89,11 @@ app.get('/api/oauth', function(req, res) {
   console.log('AUTHORIZE URL ', authorizeURL);
   res.json(authorizeURL);
 });
+
+// app.get('/api/usa', function(req, res){
+//   console.log('connected');
+//   res.render('authorize');
+// })
 
 // Retrieve information about user
   app.get('/api/playlists', function(req, res){
@@ -101,7 +106,9 @@ app.get('/api/oauth', function(req, res) {
     });
   })
 
- // Retrieve new releases
+// U.S.A
+
+ // Retrieve new releases in U.S.A
   app.get('/api/releases', function(req,res){
     spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'US' }).then(function(results) {
       res.json(results)
@@ -111,7 +118,8 @@ app.get('/api/oauth', function(req, res) {
     })     
   });
 
-// Get a List of Categories
+
+// Get a List of Categories in U.S.A
 app.get('/api/categories', function(req, res){
   spotifyApi.getCategories({
       limit : 10,
@@ -124,10 +132,52 @@ app.get('/api/categories', function(req, res){
   });
 });
 
+// Get a list of Playlists from Categories in U.S.A
 app.get('/api/getplaylists/:category', function(req, res) {
   console.log('HITTING ROUTE');
   spotifyApi.getPlaylistsForCategory(req.params.category, {
     country: 'US',
+    limit: 6
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  })
+})  
+
+///Great Britain
+
+// Retrieve new releases in Great Britain
+  app.get('/api/releasesuk', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'GB' }).then(function(results) {
+      res.json(results)
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    })     
+  });
+
+
+// Get a List of Categories in Great Britain
+app.get('/api/categoriesuk', function(req, res){
+  spotifyApi.getCategories({
+      limit : 10,
+      offset: 0,
+      country: 'GB',
+  }).then(function(results) {
+    res.json(results)
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Great Britain.
+app.get('/api/getplaylistsuk/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'GB',
     limit: 6
   }).then(function(data) {
     console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
