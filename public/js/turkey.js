@@ -1,18 +1,18 @@
-console.log('connectedfrance');
+console.log('connectedturkey');
 
 $(document).ready(function(){
   
   var $body = $('body');
 
-   $('#france').one('click', function(event){
+   $('#turkey').one('click', function(event){
     $.ajax({
-      url: '/api/releasesfrance',
+      url: '/api/releasesturkey',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
         console.log(results);
         var $releasesTitle = $('<h2>');
-        $releasesTitle.text('New Releases in France');
+        $releasesTitle.text('New Releases in Turkey');
         $('#contents').append($releasesTitle);
 
         ///getting first new release to show
@@ -98,9 +98,9 @@ $(document).ready(function(){
     });
   });
 
-  $('#france').one('click', function(event){
+  $('#Turkey').one('click', function(event){
     $.ajax({
-      url:'/api/categoriesfrance',
+      url:'/api/categoriesturkey',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
@@ -110,7 +110,7 @@ $(document).ready(function(){
         var category = $(this).text();
         console.log('CATEGORY ', category);
         $.ajax({
-          url: '/api/getplaylistsfrance/' + category,
+          url: '/api/getplayliststurkey/' + category,
           type: "GET",
           dataType: 'json'
         }).done(function(results){
@@ -164,7 +164,7 @@ $(document).ready(function(){
         });
       });
       var $categoriesTitle = $('<h2>');
-      $categoriesTitle.text('Choose from one of the top Categories in France to hear top Playlists');
+      $categoriesTitle.text('Choose from one of the top Categories in Turkey to hear top Playlists');
       $categoriesContainer.append($categoriesTitle);
 
 

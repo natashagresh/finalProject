@@ -1,18 +1,18 @@
-console.log('connectedfrance');
+console.log('connectedaustralia');
 
 $(document).ready(function(){
   
   var $body = $('body');
 
-   $('#france').one('click', function(event){
+   $('#australia').one('click', function(event){
     $.ajax({
-      url: '/api/releasesfrance',
+      url: '/api/releasesaustralia',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
         console.log(results);
         var $releasesTitle = $('<h2>');
-        $releasesTitle.text('New Releases in France');
+        $releasesTitle.text('New Releases in Australia');
         $('#contents').append($releasesTitle);
 
         ///getting first new release to show
@@ -74,7 +74,7 @@ $(document).ready(function(){
           var $anchorReleasesFive = $('<iframe>').attr('src', displayReleasesFive);
           $anchorReleasesFive.text(displayReleasesFive);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesFive + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');  
-
+ 
         // getting seventh new release to show in USA
         var $displayReleasesNameSix = results.body.albums.items[6].name;
         var $anchorReleasesNameSix = $('<p>');
@@ -95,12 +95,11 @@ $(document).ready(function(){
           $anchorReleasesSeven.text(displayReleasesSeven);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
     });
-    });
   });
 
-  $('#france').one('click', function(event){
+  $('#australia').one('click', function(event){
     $.ajax({
-      url:'/api/categoriesfrance',
+      url:'/api/categoriesaustralia',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
@@ -110,7 +109,7 @@ $(document).ready(function(){
         var category = $(this).text();
         console.log('CATEGORY ', category);
         $.ajax({
-          url: '/api/getplaylistsfrance/' + category,
+          url: '/api/getplaylistsaustralia/' + category,
           type: "GET",
           dataType: 'json'
         }).done(function(results){
@@ -164,7 +163,7 @@ $(document).ready(function(){
         });
       });
       var $categoriesTitle = $('<h2>');
-      $categoriesTitle.text('Choose from one of the top Categories in France to hear top Playlists');
+      $categoriesTitle.text('Choose from one of the top Categories in Australia to hear top Playlists');
       $categoriesContainer.append($categoriesTitle);
 
 

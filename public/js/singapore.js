@@ -1,18 +1,18 @@
-console.log('connectedfrance');
+console.log('connectedsingapore');
 
 $(document).ready(function(){
   
   var $body = $('body');
 
-   $('#france').one('click', function(event){
+   $('#singapore').one('click', function(event){
     $.ajax({
-      url: '/api/releasesfrance',
+      url: '/api/releasessingapore',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
         console.log(results);
         var $releasesTitle = $('<h2>');
-        $releasesTitle.text('New Releases in France');
+        $releasesTitle.text('New Releases in Singapore');
         $('#contents').append($releasesTitle);
 
         ///getting first new release to show
@@ -98,9 +98,9 @@ $(document).ready(function(){
     });
   });
 
-  $('#france').one('click', function(event){
+  $('#singapore').one('click', function(event){
     $.ajax({
-      url:'/api/categoriesfrance',
+      url:'/api/categoriessingapore',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
@@ -110,7 +110,7 @@ $(document).ready(function(){
         var category = $(this).text();
         console.log('CATEGORY ', category);
         $.ajax({
-          url: '/api/getplaylistsfrance/' + category,
+          url: '/api/getplaylistssingapore/' + category,
           type: "GET",
           dataType: 'json'
         }).done(function(results){
@@ -164,7 +164,7 @@ $(document).ready(function(){
         });
       });
       var $categoriesTitle = $('<h2>');
-      $categoriesTitle.text('Choose from one of the top Categories in France to hear top Playlists');
+      $categoriesTitle.text('Choose from one of the top Categories in Singapore to hear top Playlists');
       $categoriesContainer.append($categoriesTitle);
 
 
@@ -177,4 +177,4 @@ $(document).ready(function(){
     });
   });  
 
-});  
+}); 

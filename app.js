@@ -10,7 +10,7 @@ var scopes = ['playlist-read-private', 'playlist-read-collaborative', 'playlist-
 
 // Configuration
 app.use(cookieParser());
-app.use(session({secret:process.env.sessiontoken}));
+app.use(session({secret:process.env.sessiontoken, resave:true, saveUninitialized:true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
@@ -349,6 +349,229 @@ app.get('/api/getplaylistsbrazil/:category', function(req, res) {
   });
 });
 
+// AUSTRALIA
+
+// Retrieve new releases in Australia
+ app.get('/api/releasesaustralia', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'AU' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Australia
+app.get('/api/categoriesaustralia', function(req, res){
+  spotifyApi.getCategories({
+      country: 'AU'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Australia.
+app.get('/api/getplaylistsaustralia/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'AU'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
+
+// MEXICO
+
+// Retrieve new releases in Mexico
+ app.get('/api/releasesmexico', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'MX' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Mexico
+app.get('/api/categoriesmexico', function(req, res){
+  spotifyApi.getCategories({
+      country: 'MX'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Mexico.
+app.get('/api/getplaylistsmexico/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'MX'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
+
+//SINGAPORE
+// Retrieve new releases in Sinagpore
+ app.get('/api/releasessingapore', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'SG' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Singapore
+app.get('/api/categoriessingapore', function(req, res){
+  spotifyApi.getCategories({
+      country: 'SG'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Singapore
+app.get('/api/getplaylistssingapore/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'SG'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
+
+//COLOMBIA
+// Retrieve new releases in Colombia
+ app.get('/api/releasescolombia', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'CO' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Colombia
+app.get('/api/categoriescolombia', function(req, res){
+  spotifyApi.getCategories({
+      country: 'CO'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Colombia
+app.get('/api/getplaylistscolombia/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'CO'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
+
+//SPAIN
+// Retrieve new releases in Spain
+ app.get('/api/releasesspain', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'ES' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Spain
+app.get('/api/categoriesspain', function(req, res){
+  spotifyApi.getCategories({
+      country: 'ES'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Spain
+app.get('/api/getplaylistsspain/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'ES'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
+
+// TURKEY
+// Retrieve new releases in Turkey
+ app.get('/api/releasesturkey', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'TR' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Turkey
+app.get('/api/categoriesturkey', function(req, res){
+  spotifyApi.getCategories({
+      country: 'TR'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Turkey
+app.get('/api/getplayliststurkey/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'TR'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
 
 
 app.listen(process.env.PORT || 3000);
