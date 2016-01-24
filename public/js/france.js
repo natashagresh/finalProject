@@ -1,0 +1,146 @@
+console.log('connectedfrance');
+
+$(document).ready(function(){
+  
+  var $body = $('body');
+
+   $('#france').one('click', function(event){
+    $.ajax({
+      url: '/api/releasesfrance',
+      type: 'GET',
+      dataType: 'json'
+    }).done(function(results){
+        console.log(results);
+        var $releasesTitle = $('<h2>');
+        $releasesTitle.text('New Releases in France');
+        $('#contents').append($releasesTitle);
+
+        ///getting first new release to show
+        var $displayReleases = results.body.albums.items[0].uri;
+        var $displayReleasesName = results.body.albums.items[0].name;
+        var $anchorReleasesName = $('<p>');
+        $anchorReleasesName.text($displayReleasesName);
+        $('#contents').append($displayReleasesName);
+          var $anchorReleases = $('<iframe>').attr('src', $displayReleases);         
+          $anchorReleases.text($displayReleases);
+          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + $displayReleases + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+
+        ///getting second new release to show in USA
+        var $displayReleasesNameOne = results.body.albums.items[1].name;
+        var $anchorReleasesNameOne = $('<p>');
+        $anchorReleasesNameOne.text($displayReleasesNameOne);
+        $('#contents').append($displayReleasesNameOne);
+          var displayReleasesOne = results.body.albums.items[1].uri;
+          var $anchorReleasesOne = $('<iframe>').attr('src', displayReleasesOne);
+          $anchorReleasesOne.text(displayReleasesOne);
+          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesOne + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+
+        // getting third new release to show in USA
+        var $displayReleasesNameTwo = results.body.albums.items[2].name;
+        var $anchorReleasesNameTwo = $('<p>');
+        $anchorReleasesNameTwo.text($displayReleasesNameTwo);
+        $('#contents').append($displayReleasesNameTwo);
+          var displayReleasesTwo = results.body.albums.items[2].uri;
+          var $anchorReleasesTwo = $('<iframe>').attr('src', displayReleasesTwo);
+          $anchorReleasesTwo.text(displayReleasesTwo);
+          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesTwo + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+
+        // getting fourth new release to show in USA
+        var $displayReleasesNameThree = results.body.albums.items[3].name;
+        var $anchorReleasesNameThree = $('<p>');
+        $anchorReleasesNameThree.text($displayReleasesNameThree);
+        $('#contents').append($displayReleasesNameThree);
+          var displayReleasesThree = results.body.albums.items[3].uri;
+          var $anchorReleasesThree = $('<iframe>').attr('src', displayReleasesThree);
+          $anchorReleasesThree.text(displayReleasesThree);
+          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesThree + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+          
+        // getting fifth new release to show in USA
+        var $displayReleasesNameFour = results.body.albums.items[4].name;
+        var $anchorReleasesNameFour = $('<p>');
+        $anchorReleasesNameFour.text($displayReleasesNameFour);
+        $('#contents').append($displayReleasesNameFour);
+          var displayReleasesFour = results.body.albums.items[4].uri;
+          var $anchorReleasesFour = $('<iframe>').attr('src', displayReleasesFour);
+          $anchorReleasesFour.text(displayReleasesFour);
+          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesFour + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');    
+
+        // getting sixth new release to show in USA
+        var $displayReleasesNameFive = results.body.albums.items[5].name;
+        var $anchorReleasesNameFive = $('<p>');
+        $anchorReleasesNameFive.text($displayReleasesNameFive);
+        $('#contents').append($displayReleasesNameFive);
+          var displayReleasesFive = results.body.albums.items[5].uri;
+          var $anchorReleasesFive = $('<iframe>').attr('src', displayReleasesFive);
+          $anchorReleasesFive.text(displayReleasesFive);
+          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesFive + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');  
+    });
+  });
+
+  $('#france').one('click', function(event){
+    $.ajax({
+      url:'/api/categoriesfrance',
+      type: 'GET',
+      dataType: 'json'
+    }).done(function(results){
+      var $categoriesContainer = $('<div></div>');
+      $body.append($categoriesContainer);
+      $categoriesContainer.on('click', 'p', function() {
+        var category = $(this).text();
+        console.log('CATEGORY ', category);
+        $.ajax({
+          url: '/api/getplaylistsfrance/' + category,
+          type: "GET",
+          dataType: 'json'
+        }).done(function(results){
+          console.log(results);
+          // var playlists = results.body.playlists.items[0].id
+          var uri = results.body.playlists.items[0].uri;
+          var playlistName = results.body.playlists.items[0].name;
+          // console.log(results.body.playlists.items[0].id);
+          // console.log(playlistName);
+          var $anchorplaylistName = $('<p>');
+          $anchorplaylistName.text(playlistName);
+          $body.append($anchorplaylistName);
+          // var $anchorplaylists = $('<iframe>').attr('src', playlists)         
+          // console.log(playlists);
+          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+          // Get second playlist to turn up and title name
+          var playlistNameOne = results.body.playlists.items[1].name;
+          var $anchorplaylistNameOne = $('<p>');
+          $anchorplaylistNameOne.text(playlistNameOne);
+          $body.append($anchorplaylistNameOne);
+          var uriOne = results.body.playlists.items[1].uri;
+          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriOne + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+          // Get third playlist to turn up and title name
+          var playlistNameTwo = results.body.playlists.items[2].name;
+          var $anchorplaylistNameTwo = $('<p>');
+          $anchorplaylistNameTwo.text(playlistNameTwo);
+          $body.append($anchorplaylistNameTwo);
+          var uriTwo = results.body.playlists.items[2].uri;
+          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriTwo + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+          // Get fourth playlist to turn up and title name
+          var playlistNameThree = results.body.playlists.items[3].name;
+          var $anchorplaylistNameThree = $('<p>');
+          $anchorplaylistNameThree.text(playlistNameThree);
+          $body.append($anchorplaylistNameThree);
+          var uriThree = results.body.playlists.items[3].uri;
+          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriThree + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+
+        });
+      });
+      var $categoriesTitle = $('<h2>');
+      $categoriesTitle.text('Choose from one of the top Categories in France to hear top Playlists');
+      $categoriesContainer.append($categoriesTitle);
+
+
+      var displayCategories = results.body.categories.items;
+      displayCategories.forEach(function(element) {
+        var anchorCategories = $('<p>');
+        anchorCategories.text(element.id);
+        $categoriesContainer.append(anchorCategories);
+      });
+    });
+  });  
+
+});  

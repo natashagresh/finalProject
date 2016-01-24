@@ -229,6 +229,87 @@ app.get('/api/getplaylistssweden/:category', function(req, res) {
   });
 }); 
 
+//FRANCE
+
+ // Retrieve new releases in France
+  app.get('/api/releasesfrance', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'FR' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in France
+app.get('/api/categoriesfrance', function(req, res){
+  spotifyApi.getCategories({
+      limit : 10,
+      offset: 0,
+      country: 'FR',
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in France.
+app.get('/api/getplaylistsfrance/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'FR',
+    limit: 6
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+}); 
+
+//GERMANY
+
+ // Retrieve new releases in Germany
+  app.get('/api/releasesgermany', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'DE' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Germany
+app.get('/api/categoriesgermany', function(req, res){
+  spotifyApi.getCategories({
+      limit : 10,
+      offset: 0,
+      country: 'DE',
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Germany.
+app.get('/api/getplaylistsgermany/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'DE',
+    limit: 6
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+}); 
 
 
 app.listen(process.env.PORT || 3000);
