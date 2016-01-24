@@ -309,7 +309,46 @@ app.get('/api/getplaylistsgermany/:category', function(req, res) {
   }, function(error) {
     console.log('ERRRRRORRR ', error);
   });
-}); 
+});
+
+//BRAZIL
+
+// Retrieve new releases in Brazil
+ app.get('/api/releasesbrazil', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'BR' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Brazil
+app.get('/api/categoriesbrazil', function(req, res){
+  spotifyApi.getCategories({
+      country: 'BR'
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Brazil.
+app.get('/api/getplaylistsbrazil/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'BR'
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+});
+
 
 
 app.listen(process.env.PORT || 3000);
