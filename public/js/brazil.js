@@ -95,7 +95,6 @@ $(document).ready(function(){
           $anchorReleasesSeven.text(displayReleasesSeven);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
     });
-    });
   });
 
   $('#brazil').one('click', function(event){
@@ -174,7 +173,6 @@ $(document).ready(function(){
         anchorCategories.text(element.id);
         $categoriesContainer.append(anchorCategories);
       });
-    });
-  });  
-
+    });  
+  });
 });  

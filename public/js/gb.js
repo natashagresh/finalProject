@@ -95,7 +95,6 @@ $(document).ready(function(){
           $anchorReleasesSeven.text(displayReleasesSeven);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
     });
-    });
   });
 
   $('#uk').one('click', function(event){
@@ -115,16 +114,11 @@ $(document).ready(function(){
           dataType: 'json'
         }).done(function(results){
           console.log(results);
-          // var playlists = results.body.playlists.items[0].id
           var uri = results.body.playlists.items[0].uri;
           var playlistName = results.body.playlists.items[0].name;
-          // console.log(results.body.playlists.items[0].id);
-          // console.log(playlistName);
           var $anchorplaylistName = $('<p>');
           $anchorplaylistName.text(playlistName);
           $body.append($anchorplaylistName);
-          // var $anchorplaylists = $('<iframe>').attr('src', playlists)         
-          // console.log(playlists);
           $body.append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           // Get second playlist to turn up and title name
           var playlistNameOne = results.body.playlists.items[1].name;
@@ -174,7 +168,6 @@ $(document).ready(function(){
         anchorCategories.text(element.id);
         $categoriesContainer.append(anchorCategories);
       });
-    });
-  });  
-
+    });  
+  });
 });  

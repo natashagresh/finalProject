@@ -135,7 +135,7 @@ $(document).ready(function(){
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
     });
     });
-  });
+
 
   $('#usa').one('click', function(event){
     $.ajax({
@@ -214,6 +214,6 @@ $(document).ready(function(){
         $categoriesContainer.append(anchorCategories);
       });
     });
-  });
-
 });
+});
+

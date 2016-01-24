@@ -201,7 +201,7 @@ app.get('/api/getplaylistsuk/:category', function(req, res) {
   });
 
 
-// Get a List of Categories in Great Britain
+// Get a List of Categories in Sweden
 app.get('/api/categoriessweden', function(req, res){
   spotifyApi.getCategories({
       limit : 10,
@@ -214,7 +214,7 @@ app.get('/api/categoriessweden', function(req, res){
   });
 });
 
-// Get a list of Playlists from Categories in Great Britain.
+// Get a list of Playlists from Categories in Sweden
 app.get('/api/getplaylistssweden/:category', function(req, res) {
   console.log('HITTING ROUTE');
   spotifyApi.getPlaylistsForCategory(req.params.category, {

@@ -95,10 +95,10 @@ $(document).ready(function(){
           $anchorReleasesSeven.text(displayReleasesSeven);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
     });
-    });
   });
 
   $('#sweden').one('click', function(event){
+    console.log('were contected')
     $.ajax({
       url:'/api/categoriessweden',
       type: 'GET',
@@ -175,6 +175,5 @@ $(document).ready(function(){
         $categoriesContainer.append(anchorCategories);
       });
     });
-  });  
-
+  });
 });  

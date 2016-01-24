@@ -75,7 +75,7 @@ $(document).ready(function(){
           $anchorReleasesFive.text(displayReleasesFive);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesFive + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');  
 
-        // getting seventh new release to show in USA
+      // getting seventh new release to show in USA
         var $displayReleasesNameSix = results.body.albums.items[6].name;
         var $anchorReleasesNameSix = $('<p>');
         $anchorReleasesNameSix.text($displayReleasesNameSix);
@@ -94,7 +94,6 @@ $(document).ready(function(){
           var $anchorReleasesSeven = $('<iframe>').attr('src', displayReleasesSeven);
           $anchorReleasesSeven.text(displayReleasesSeven);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
-    });
     });
   });
 
@@ -174,7 +173,6 @@ $(document).ready(function(){
         anchorCategories.text(element.id);
         $categoriesContainer.append(anchorCategories);
       });
-    });
-  });  
-
+    }); 
+  });
 }); 
