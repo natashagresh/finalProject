@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/bower_components'));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 // Setting Credentials for Spotify API
 var spotifyApi = new SpotifyWebApi({
@@ -79,10 +79,10 @@ app.get('/authorizespotify', function(req, res){
         }
 
         res.render('mainpage');
-      })
+      });
     }); 
   }
-})
+});
 
 app.get('/api/oauth', function(req, res) {
   console.log('REQ.QUERY ', req.query);
@@ -99,23 +99,23 @@ app.get('/api/oauth', function(req, res) {
   app.get('/api/playlists', function(req, res){
     spotifyApi.getUser('ncgresh').then(function(results) {
     console.log('RESULTS ', results);
-    res.json(results)
+    res.json(results);
     }, function(error) {
       console.log('GET ME ERROR ', error);
       res.end();
     });
-  })
+  });
 
 // U.S.A
 
  // Retrieve new releases in U.S.A
   app.get('/api/releases', function(req,res){
     spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'US' }).then(function(results) {
-      res.json(results)
+      res.json(results);
     }, function(error) {
        console.log("Something went wrong!", error);
        res.end();
-    })     
+    });     
   });
 
 
@@ -126,7 +126,7 @@ app.get('/api/categories', function(req, res){
       offset: 0,
       country: 'US',
   }).then(function(results) {
-    res.json(results)
+    res.json(results);
   }, function(error) {
     console.log("Something went wrong!", error);
   });
@@ -144,19 +144,19 @@ app.get('/api/getplaylists/:category', function(req, res) {
     res.end();
   }, function(error) {
     console.log('ERRRRRORRR ', error);
-  })
-})  
+  });
+});  
 
 ///Great Britain
 
 // Retrieve new releases in Great Britain
   app.get('/api/releasesuk', function(req,res){
     spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'GB' }).then(function(results) {
-      res.json(results)
+      res.json(results);
     }, function(error) {
        console.log("Something went wrong!", error);
        res.end();
-    })     
+    });    
   });
 
 
@@ -167,7 +167,7 @@ app.get('/api/categoriesuk', function(req, res){
       offset: 0,
       country: 'GB',
   }).then(function(results) {
-    res.json(results)
+    res.json(results);
   }, function(error) {
     console.log("Something went wrong!", error);
   });
@@ -185,8 +185,51 @@ app.get('/api/getplaylistsuk/:category', function(req, res) {
     res.end();
   }, function(error) {
     console.log('ERRRRRORRR ', error);
-  })
-})  
+  });
+}); 
+
+ // SWEDEN
+
+ // Retrieve new releases in Sweden
+  app.get('/api/releasessweden', function(req,res){
+    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: 'SE' }).then(function(results) {
+      res.json(results);
+    }, function(error) {
+       console.log("Something went wrong!", error);
+       res.end();
+    });    
+  });
+
+
+// Get a List of Categories in Great Britain
+app.get('/api/categoriessweden', function(req, res){
+  spotifyApi.getCategories({
+      limit : 10,
+      offset: 0,
+      country: 'SE',
+  }).then(function(results) {
+    res.json(results);
+  }, function(error) {
+    console.log("Something went wrong!", error);
+  });
+});
+
+// Get a list of Playlists from Categories in Great Britain.
+app.get('/api/getplaylistssweden/:category', function(req, res) {
+  console.log('HITTING ROUTE');
+  spotifyApi.getPlaylistsForCategory(req.params.category, {
+    country: 'SE',
+    limit: 6
+  }).then(function(data) {
+    console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
+    res.json(data);
+    res.end();
+  }, function(error) {
+    console.log('ERRRRRORRR ', error);
+  });
+}); 
+
+
 
 app.listen(process.env.PORT || 3000);
 

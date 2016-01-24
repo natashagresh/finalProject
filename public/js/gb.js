@@ -18,18 +18,18 @@ $(document).ready(function(){
         ///getting first new release to show
         var $displayReleases = results.body.albums.items[0].uri;
         var $displayReleasesName = results.body.albums.items[0].name;
-        var $anchorReleasesName = $('<p>')
-        $anchorReleasesName.text($displayReleasesName)
-        $('#contents').append($displayReleasesName)
+        var $anchorReleasesName = $('<p>');
+        $anchorReleasesName.text($displayReleasesName);
+        $('#contents').append($displayReleasesName);
           var $anchorReleases = $('<iframe>').attr('src', $displayReleases);         
           $anchorReleases.text($displayReleases);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + $displayReleases + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
 
         ///getting second new release to show in USA
         var $displayReleasesNameOne = results.body.albums.items[1].name;
-        var $anchorReleasesNameOne = $('<p>')
-        $anchorReleasesNameOne.text($displayReleasesNameOne)
-        $('#contents').append($displayReleasesNameOne)
+        var $anchorReleasesNameOne = $('<p>');
+        $anchorReleasesNameOne.text($displayReleasesNameOne);
+        $('#contents').append($displayReleasesNameOne);
           var displayReleasesOne = results.body.albums.items[1].uri;
           var $anchorReleasesOne = $('<iframe>').attr('src', displayReleasesOne);
           $anchorReleasesOne.text(displayReleasesOne);
@@ -37,9 +37,9 @@ $(document).ready(function(){
 
         // getting third new release to show in USA
         var $displayReleasesNameTwo = results.body.albums.items[2].name;
-        var $anchorReleasesNameTwo = $('<p>')
-        $anchorReleasesNameTwo.text($displayReleasesNameTwo)
-        $('#contents').append($displayReleasesNameTwo)
+        var $anchorReleasesNameTwo = $('<p>');
+        $anchorReleasesNameTwo.text($displayReleasesNameTwo);
+        $('#contents').append($displayReleasesNameTwo);
           var displayReleasesTwo = results.body.albums.items[2].uri;
           var $anchorReleasesTwo = $('<iframe>').attr('src', displayReleasesTwo);
           $anchorReleasesTwo.text(displayReleasesTwo);
@@ -47,9 +47,9 @@ $(document).ready(function(){
 
         // getting fourth new release to show in USA
         var $displayReleasesNameThree = results.body.albums.items[3].name;
-        var $anchorReleasesNameThree = $('<p>')
-        $anchorReleasesNameThree.text($displayReleasesNameThree)
-        $('#contents').append($displayReleasesNameThree)
+        var $anchorReleasesNameThree = $('<p>');
+        $anchorReleasesNameThree.text($displayReleasesNameThree);
+        $('#contents').append($displayReleasesNameThree);
           var displayReleasesThree = results.body.albums.items[3].uri;
           var $anchorReleasesThree = $('<iframe>').attr('src', displayReleasesThree);
           $anchorReleasesThree.text(displayReleasesThree);
@@ -57,9 +57,9 @@ $(document).ready(function(){
           
         // getting fifth new release to show in USA
         var $displayReleasesNameFour = results.body.albums.items[4].name;
-        var $anchorReleasesNameFour = $('<p>')
-        $anchorReleasesNameFour.text($displayReleasesNameFour)
-        $('#contents').append($displayReleasesNameFour)
+        var $anchorReleasesNameFour = $('<p>');
+        $anchorReleasesNameFour.text($displayReleasesNameFour);
+        $('#contents').append($displayReleasesNameFour);
           var displayReleasesFour = results.body.albums.items[4].uri;
           var $anchorReleasesFour = $('<iframe>').attr('src', displayReleasesFour);
           $anchorReleasesFour.text(displayReleasesFour);
@@ -67,9 +67,9 @@ $(document).ready(function(){
 
         // getting sixth new release to show in USA
         var $displayReleasesNameFive = results.body.albums.items[5].name;
-        var $anchorReleasesNameFive = $('<p>')
-        $anchorReleasesNameFive.text($displayReleasesNameFive)
-        $('#contents').append($displayReleasesNameFive)
+        var $anchorReleasesNameFive = $('<p>');
+        $anchorReleasesNameFive.text($displayReleasesNameFive);
+        $('#contents').append($displayReleasesNameFive);
           var displayReleasesFive = results.body.albums.items[5].uri;
           var $anchorReleasesFive = $('<iframe>').attr('src', displayReleasesFive);
           $anchorReleasesFive.text(displayReleasesFive);

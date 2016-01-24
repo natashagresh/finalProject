@@ -1,57 +1,18 @@
-console.log('connected');
+console.log('connectedsweden');
 
 $(document).ready(function(){
   
   var $body = $('body');
 
-  $('#authorize').on('click', function(event){
+   $('#sweden').one('click', function(event){
     $.ajax({
-      url: "/api/oauth",
-      type: "GET",
-      dataType: "json",
-      crossDomain: true,
-   }).done(function(results) {
-      var authorizeLink = results;
-      var anchor = $('<a>').attr('href', results);
-      anchor.text('Confirm Authorization');
-      $body.append(anchor);
-      console.log(results);
-      $('#authorize').remove();
-    });
-  });
-
-  // $('#usa').on('click', function(event){
-  //   console.log('connected');
-  //   $.ajax({
-  //     url: '/api/usa',
-  //     type: 'GET',
-  //     dataType: 'json'
-  //   }).done(function(results){
-  //   });
-  // });
-  
-  // TODO this should actually show the user but will change
-  // DELETE
-  $('#playlists').on('click', function(event){
-    $.ajax({
-      url: '/api/playlists',
-      type: 'GET',
-      dataType: 'json'
-    }).done(function(results){
-        console.log(results);
-    });
-  });
-
-
-  $('#usa').one('click', function(event){
-    $.ajax({
-      url: '/api/releases',
+      url: '/api/releasessweden',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
         console.log(results);
         var $releasesTitle = $('<h2>');
-        $releasesTitle.text('New Releases in U.S.A');
+        $releasesTitle.text('New Releases in Sweden');
         $('#contents').append($releasesTitle);
 
         ///getting first new release to show
@@ -116,9 +77,9 @@ $(document).ready(function(){
     });
   });
 
-  $('#usa').one('click', function(event){
+  $('#sweden').one('click', function(event){
     $.ajax({
-      url:'/api/categories',
+      url:'/api/categoriessweden',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
@@ -128,7 +89,7 @@ $(document).ready(function(){
         var category = $(this).text();
         console.log('CATEGORY ', category);
         $.ajax({
-          url: '/api/getplaylists/' + category,
+          url: '/api/getplaylistssweden/' + category,
           type: "GET",
           dataType: 'json'
         }).done(function(results){
@@ -169,7 +130,7 @@ $(document).ready(function(){
         });
       });
       var $categoriesTitle = $('<h2>');
-      $categoriesTitle.text('Choose from one of the top Categories in Great Britain to hear top Playlists');
+      $categoriesTitle.text('Choose from one of the top Categories in Sweden to hear top Playlists');
       $categoriesContainer.append($categoriesTitle);
 
 
@@ -180,6 +141,6 @@ $(document).ready(function(){
         $categoriesContainer.append(anchorCategories);
       });
     });
-  });
+  });  
 
-});
+});  
