@@ -1,7 +1,6 @@
 console.log('connected');
 
-$(document).ready(function(){
-  
+$(document).ready(function(){  
   var $body = $('body');
 
   $('#authorize').on('click', function(event){
@@ -42,6 +41,8 @@ $(document).ready(function(){
     });
   });
 
+ $('.ui.accordion')
+  .accordion();
 
   $('#usa').on('click', function(event){
     $.ajax({

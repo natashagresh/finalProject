@@ -2,12 +2,8 @@
 <html>
 <head>
   <title>WorldWide Spotify</title>
-  <link rel="stylesheet" href="/css/style.css">
-
-
   <script src="/jquery/dist/jquery.js"></script>
-
-  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Asap:400,700' rel='stylesheet' type='text/css'>
+  <script src="semantic-ui/dist/semantic.min.js"></script>
   <script src="/js/main.js"></script> 
   <script src="/js/gb.js"></script>
   <script src="/js/sweden.js"></script>
@@ -20,53 +16,44 @@
   <script src="/js/mexico.js"></script>
   <script src="/js/colombia.js"></script>
   <script src="/js/singapore.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="semantic-ui/dist/semantic.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Asap:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div id="navbar-example">
-  <ul class="nav nav-tabs nav-justified">
-    <li role="presentation" id="usa"><a href="#"><img src="/images/usa.png">U.S.A</a></li>
-    <li role="presentation" id="uk"><a href="#"><img src="/images/uk.png">U.K</a></li>
-    <li role="presentation" id="sweden"><a href="#"><img src="/images/sweden.png">Sweden</a></li>
-    <li role="presentation" id="france"><a href="#"><img src="/images/france.png">France</a></li>
-    <li role="presentation" id="spain"><a href="#"><img src="/images/spain.png">Spain</a></li>
-    <li role="presentation" id="germany"><a href="#"><img src="/images/germany.png">Germany</a></li>
-    <li role="presentation" id="turkey"><a href="#"><img src="/images/turkey.png">Turkey</a></li>
-    <li role="presentation" id="brazil"><a href="#"><img src="/images/brazil.png">Brazil</a></li>
-    <li role="presentation" id="australia"><a href="#"><img src="/images/australia.png">Australia</a></li>
-    <li role="presentation" id="mexico"><a href="#"><img src="/images/mexico.png">Mexico</a></li>
-    <li role="presentation" id="colombia"><a href="#"><img src="/images/colombia.png">Colombia</a></li>
-    <li role="presentation" id="singapore"><a href="#"><img src="/images/singapore.png">Singapore</a></li>
-  </ul>
-  </div>
+  <div id="container">
+    <img src="http://static-5.app4smart.me/i/icon/240/f2x/mnc/ipz/spotify-music.png" height= '60' width='60'>      
+    <h1>WorldWide Spotify</h1>
+    <img src="/images/spotify.png">
+    <h1> Welcome to WorldWide Spotify</h1>
+    <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!</p>
+    <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
+  </div> 
 
-  <div id="container" data-spy="scroll" data-target="#secondContainer">
-       <div class="page-header">
-          <img src="http://static-5.app4smart.me/i/icon/240/f2x/mnc/ipz/spotify-music.png" height= '60' width='60'>      
-          <h1>WorldWide Spotify</h1>
-          <!-- Large modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">How to Use</button>
-            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-            <div class="modal-dialog modal-lg">
-              <div class="modal-content">
-              <img src="/images/spotify.png">
-                <h1> Welcome to WorldWide Spotify</h1>
-                <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!</p>
-                <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
-              </div>              
-            </div>
-            </div>
-        </div> 
+  <div id="ui twelve top-attatched buttons">
+    <button class="ui button" id="usa"><img src="/images/usa.png">U.S.A</button>
+    <button class="ui button" id="gb"><img src="/images/uk.png">U.K</button>
+    <button class="ui button" id="sweden"><img src="/images/sweden.png">Sweden</button>
+    <button class="ui button" id="france"><img src="/images/france.png">France</button>
+    <button class="ui button" id="spain"><img src="/images/spain.png">Spain</button>
+    <button class="ui button" id="germany"><img src="/images/germany.png">Germany</button>
+    <button class="ui button" id="turkey"><img src="/images/turkey.png">Turkey</button>
+    <button class="ui button" id="brazil"><img src="/images/brazil.png">Brazil</button>
+    <button class="ui button" id="australia"><img src="/images/australia.png">Australia</button>
+    <button class="ui button" id="mexico"><img src="/images/mexico.png">Mexico</button>
+    <button class="ui button" id="colombia"><img src="/images/colombia.png">Colombia</button>
+    <button class="ui button" id="singapore"><img src="/images/singapore.png">Singapore</button>
+  </div>
+    <div id="allContents">             
       <div id="headerReleases"></div>     
       <div id="contents"></div>
-
       <div id="categoriesContainer">
-              <div id="headerCategories"></div>
-              <div id="categoriesContent">
-              </div>
-              <div id="categoriesPlaylists"></div>
-      </div>
+        <div id="headerCategories"></div>
+        <div id="categoriesContent"></div>
+        <div id="categoriesPlaylists"></div>
+      </div>          
   </div>
-<!--   </div> 
-  </div>  -->
+
+ 
 </body>   
 </html>

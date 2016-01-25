@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + '/views'));
 app.use(express.static(__dirname + '/bower_components'));
+app.use(express.static(__dirname + '/node_modules'));
 app.set('view engine', 'ejs');
 
 // Setting Credentials for Spotify API

@@ -1,6 +1,6 @@
 #container{
-  position: relative;
-  overflow-y: scroll;
+/*  position: relative;
+  overflow-y: scroll;*/
   height:600px;
   /*background-image: url('https://i.ytimg.com/vi/4zDowqVVOLA/maxresdefault.jpg');*/
   color:black;
@@ -54,11 +54,6 @@
 #contents iframe{
   display: inline;
   padding:20px;
-  column-width: 320px;
-  column-gap: 15px;
-  width: 90%;
-  max-width: 1100px;
-  margin: 50px auto;
 };
 
 #categoriesContainer{
@@ -75,5 +70,10 @@
 
 #navbar-example{
   background-color: black;
+}
+
+#allContents{
+  position: relative;
+  overflow-y: scroll;
 }
 
