@@ -24,8 +24,8 @@ My Final Project at General Assembly will be called WorldWide Spotify. The app w
 - Express-Session
 
 ##**WireFrames**
-![wireframes](/public/images/wireframes1.png)
-![wireframes](/public/images/wireframes2.png)
+![wireframes](/public/images/wireframe1.png)
+![wireframes](/public/images/wireframe2.png)
 
 ##**Trello**
 [Here](https://trello.com/b/lLx9Ld0z/final-project)
