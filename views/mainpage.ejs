@@ -2,11 +2,12 @@
 <html>
 <head>
   <title>WorldWide Spotify</title>
-  <script src="/jquery/dist/jquery.js"></script>
-  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"></a>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
-  <script src="bootstrap/dist/js/bootstrap.js"></script>
   <link rel="stylesheet" href="style.css">
+  <script src="/jquery/dist/jquery.js"></script>
+  <script src="bootstrap/dist/js/bootstrap.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Asap:400,700' rel='stylesheet' type='text/css'>
   <script src="/js/main.js"></script> 
   <script src="/js/gb.js"></script>
   <script src="/js/sweden.js"></script>
@@ -21,29 +22,46 @@
   <script src="/js/singapore.js"></script>
 </head>
 <body>
-  <h1>Welcome to WorldWide Spotify</h1>
-  <p>The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music!</p>
-  <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
-  <div id="navbar-example">
+    <div id="navbar-example">
   <ul class="nav nav-tabs nav-justified">
-    <li role="presentation" id="usa"><a href="#"><img src="usa.png"> U.S.A</a></li>
-    <li role="presentation" id="uk"><a href="#"><img src="uk.png">   U.K</a></li>
-    <li role="presentation" id="sweden"><a href="#">Sweden</a></li>
-    <li role="presentation" id="france"><a href="#">France</a></li>
-    <li role="presentation" id="germany"><a href="#">Germany</a></li>
-    <li role="presentation" id="turkey"><a href="#">Turkey</a></li>
-    <li role="presentation" id="brazil"><a href="#">Brazil</a></li>
-    <li role="presentation" id="australia"><a href="#">Australia</a></li>
-    <li role="presentation" id="mexico"><a href="#">Mexico</a></li>
-    <li role="presentation" id="colombia"><a href="#">Colombia</a></li>
-    <li role="presentation" id="singapore"><a href="#">Singapore</a></li>
+    <li role="presentation" id="usa"><a href="#"><img src="usa.png">U.S.A</a></li>
+    <li role="presentation" id="uk"><a href="#"><img src="uk.png">U.K</a></li>
+    <li role="presentation" id="sweden"><a href="#"><img src="sweden.png">Sweden</a></li>
+    <li role="presentation" id="france"><a href="#"><img src="france.png">France</a></li>
+    <li role="presentation" id="spain"><a href="#"><img src="spain.png">Spain</a></li>
+    <li role="presentation" id="germany"><a href="#"><img src="germany.png">Germany</a></li>
+    <li role="presentation" id="turkey"><a href="#"><img src="turkey.png">Turkey</a></li>
+    <li role="presentation" id="brazil"><a href="#"><img src="brazil.png">Brazil</a></li>
+    <li role="presentation" id="australia"><a href="#"><img src="australia.png">Australia</a></li>
+    <li role="presentation" id="mexico"><a href="#"><img src="mexico.png">Mexico</a></li>
+    <li role="presentation" id="colombia"><a href="#"><img src="colombia.png">Colombia</a></li>
+    <li role="presentation" id="singapore"><a href="#"><img src="singapore.png">Singapore</a></li>
   </ul>
   </div>
+
   <div id="container" data-spy="scroll" data-target="#secondContainer">
-    <div id="secondContainer">
-      <div id="contents"></div>
-      <div id="categoriesContainer"></div>
+      <div id="contents">
+      <div class="page-header">
+    <img src="http://static-5.app4smart.me/i/icon/240/f2x/mnc/ipz/spotify-music.png" height= '60' width='60'>      
+    <h1>WorldWide Spotify</h1>
+    <!-- Large modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">How to Use</button>
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    <img src="spotify.png">
+    <h1> Welcome to WorldWide Spotify</h1>
+    <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!
+    </p>
     </div>
-  </div>  
+  </div>
+</div>
+</div>
+    <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
+  </div>
+  <div id="categoriesContainer"></div>
+  </div>
+<!--   </div> 
+  </div>  -->
 </body>   
 </html>
