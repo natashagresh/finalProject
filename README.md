@@ -1,32 +1,27 @@
-# finalProject
+# WorldWide Spotify
 
 ##**Description**
-
-<!-- My Final Project Idea is to use the Spotify API. Ideas/implementing only one of these:  -->
-<!-- - Either give the top 20 music in realtime and let you play it.  -->
-<!-- - Depending on the time of day it is (and people's mood changes), the music plays different playlists to fit that mood. -->
-<!-- - Find a way to link certain songs/playlists with a certain piece of art. So you can look at pretty art whilst listening to music. -->
-
-My Final Project will use the Spotify API to render a list of genres to the app. When you click on a genre, playlists will turn up. I plan to seed art work that I feel suites that genre. The idea is that you get to look at art work that suites that genre. The viewer will be able to scrawl through a list of art. 
+My Final Project at General Assembly will be called WorldWide Spotify. The app will involve using the Spotify API to get hold of information. When viewers log into their spotify, they will be able to pick from a list of countries and be able to listen to the top playlists and new releases. I have learned that you need a spotify account/app for you to be able to play the music.  
 
 ##**User Stories**
 1. Spotify API will be used
 2. Viewer may have to log in to Spotify account once on page
-3. A viewer will be able to search for a playlist by genre
-4. When the viewer starts listening to a playlist, art pieces associated with that genre will come up on the screen
-5. The viewer can click through the art pieces (using models and animation)
+3. If they do not have an account, I have a link bringing them to the website to sign up for one
+3. A Viewer will be able to pick from a list of countries
+4. When viewer clicks a country, the top categories/playlists and new releases in that country will show up
+5. You can listen to music - through Spotify App
 
 ##**Technologies**
 - Node
-- Angular
-- Bootstrap or semantic
+- Bootstrap
 - JQUERY
 - HTML
 - CSS
-- JSON to seed data
-- Mongo
 - Express
 - Spotify API
+- Body-Parser
+- Cookie Parser
+- Express-Session
 
 ##**WireFrames**
 ![wireframes](/public/WireFrames.png)

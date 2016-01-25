@@ -3,27 +3,25 @@ console.log('connectedaustralia');
 $(document).ready(function(){
   var $body = $('body');
 
-   $('#australia').one('click', function(event){
-    $('#contents').remove
+   $('#australia').on('click', function(event){
     $.ajax({
       url: '/api/releasesaustralia',
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
-        console.log(results);
-        var $releasesTitle = $('<h2>');
-        $releasesTitle.text('New Releases in Australia');
-        $('#contents').append($releasesTitle);
+        // var $releasesTitle = $('<h2>');
+        var releasesTitle = '<h2>New Releases in Australia</h2>';
+        $('#headerReleases').html(releasesTitle);
 
         ///getting first new release to show
         var $displayReleases = results.body.albums.items[0].uri;
         // var $displayReleasesName = results.body.albums.items[0].name;
         // var $anchorReleasesName = $('<p>');
         // $anchorReleasesName.text($displayReleasesName);
-        $('#contents').append($displayReleasesName);
-          var $anchorReleases = $('<iframe>').attr('src', $displayReleases);         
-          $anchorReleases.text($displayReleases);
-          $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + $displayReleases + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+        // $('.contentsAustralia').($displayReleasesName);
+          // var $anchorReleases = $('<iframe>').attr('src', $displayReleases);         
+          // $anchorReleases.text($displayReleases);
+          $('#contents').html('<iframe src="https://embed.spotify.com/?uri=' + $displayReleases + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
 
         ///getting second new release to show in USA
         // var $displayReleasesNameOne = results.body.albums.items[1].name;
@@ -31,8 +29,8 @@ $(document).ready(function(){
         // $anchorReleasesNameOne.text($displayReleasesNameOne);
         // $('#contents').append($displayReleasesNameOne);
           var displayReleasesOne = results.body.albums.items[1].uri;
-          var $anchorReleasesOne = $('<iframe>').attr('src', displayReleasesOne);
-          $anchorReleasesOne.text(displayReleasesOne);
+          // var $anchorReleasesOne = $('<iframe>').attr('src', displayReleasesOne);
+          // $anchorReleasesOne.text(displayReleasesOne);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesOne + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
 
         // getting third new release to show in USA
@@ -41,8 +39,8 @@ $(document).ready(function(){
         // $anchorReleasesNameTwo.text($displayReleasesNameTwo);
         // $('#contents').append($displayReleasesNameTwo);
           var displayReleasesTwo = results.body.albums.items[2].uri;
-          var $anchorReleasesTwo = $('<iframe>').attr('src', displayReleasesTwo);
-          $anchorReleasesTwo.text(displayReleasesTwo);
+          // var $anchorReleasesTwo = $('<iframe>').attr('src', displayReleasesTwo);
+          // $anchorReleasesTwo.text(displayReleasesTwo);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesTwo + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
 
         // getting fourth new release to show in USA
@@ -51,8 +49,8 @@ $(document).ready(function(){
         // $anchorReleasesNameThree.text($displayReleasesNameThree);
         // $('#contents').append($displayReleasesNameThree);
           var displayReleasesThree = results.body.albums.items[3].uri;
-          var $anchorReleasesThree = $('<iframe>').attr('src', displayReleasesThree);
-          $anchorReleasesThree.text(displayReleasesThree);
+          // var $anchorReleasesThree = $('<iframe>').attr('src', displayReleasesThree);
+          // $anchorReleasesThree.text(displayReleasesThree);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesThree + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           
         // getting fifth new release to show in USA
@@ -61,8 +59,8 @@ $(document).ready(function(){
         // $anchorReleasesNameFour.text($displayReleasesNameFour);
         // $('#contents').append($displayReleasesNameFour);
           var displayReleasesFour = results.body.albums.items[4].uri;
-          var $anchorReleasesFour = $('<iframe>').attr('src', displayReleasesFour);
-          $anchorReleasesFour.text(displayReleasesFour);
+          // var $anchorReleasesFour = $('<iframe>').attr('src', displayReleasesFour);
+          // $anchorReleasesFour.text(displayReleasesFour);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesFour + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');    
 
         // getting sixth new release to show in USA
@@ -71,8 +69,8 @@ $(document).ready(function(){
         // $anchorReleasesNameFive.text($displayReleasesNameFive);
         // $('#contents').append($displayReleasesNameFive);
           var displayReleasesFive = results.body.albums.items[5].uri;
-          var $anchorReleasesFive = $('<iframe>').attr('src', displayReleasesFive);
-          $anchorReleasesFive.text(displayReleasesFive);
+          // var $anchorReleasesFive = $('<iframe>').attr('src', displayReleasesFive);
+          // $anchorReleasesFive.text(displayReleasesFive);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesFive + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');  
  
         // getting seventh new release to show in USA
@@ -81,8 +79,8 @@ $(document).ready(function(){
         // $anchorReleasesNameSix.text($displayReleasesNameSix);
         // $('#contents').append($displayReleasesNameSix);
           var displayReleasesSix = results.body.albums.items[6].uri;
-          var $anchorReleasesSix = $('<iframe>').attr('src', displayReleasesSix);
-          $anchorReleasesSix.text(displayReleasesSix);
+          // var $anchorReleasesSix = $('<iframe>').attr('src', displayReleasesSix);
+          // $anchorReleasesSix.text(displayReleasesSix);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSix + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
 
         // getting eighth new release to show in USA
@@ -91,13 +89,13 @@ $(document).ready(function(){
         // $anchorReleasesNameSeven.text($displayReleasesNameSeven);
         // $('#contents').append($displayReleasesNameSeven);
           var displayReleasesSeven = results.body.albums.items[7].uri;
-          var $anchorReleasesSeven = $('<iframe>').attr('src', displayReleasesSeven);
-          $anchorReleasesSeven.text(displayReleasesSeven);
+          // var $anchorReleasesSeven = $('<iframe>').attr('src', displayReleasesSeven);
+          // $anchorReleasesSeven.text(displayReleasesSeven);
           $('#contents').append('<iframe src="https://embed.spotify.com/?uri=' + displayReleasesSeven + '&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
     });
   });
 
-  $('#australia').one('click', function(event){
+  $('#australia').on('click', function(event){
     $.ajax({
       url:'/api/categoriesaustralia',
       type: 'GET',
@@ -160,7 +158,6 @@ $(document).ready(function(){
       });
       var $categoriesTitle = $('<h2>');
       $categoriesTitle.text('Choose from one of the top Categories in Australia to hear top Playlists');
-      // $categoriesContainer.append($categoriesTitle);
       $('#categoriesContainer').append($categoriesTitle);
 
 
