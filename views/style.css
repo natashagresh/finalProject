@@ -1,0 +1,13 @@
+#container{
+  position: relative;
+  overflow-y: scroll;
+  height:600px;
+  background-image: url('https://i.ytimg.com/vi/4zDowqVVOLA/maxresdefault.jpg');
+};
+
+#categoriesContainer{
+  position: relative;
+  overflow-y: scroll;
+}
+
+

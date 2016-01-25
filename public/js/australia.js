@@ -1,10 +1,10 @@
 console.log('connectedaustralia');
 
 $(document).ready(function(){
-  
   var $body = $('body');
 
    $('#australia').one('click', function(event){
+    $('#contents').remove
     $.ajax({
       url: '/api/releasesaustralia',
       type: 'GET',
@@ -103,9 +103,14 @@ $(document).ready(function(){
       type: 'GET',
       dataType: 'json'
     }).done(function(results){
-      var $categoriesContainer = $('<div></div>');
-      $body.append($categoriesContainer);
-      $categoriesContainer.on('click', 'p', function() {
+      //     var $releasesTitle = $('<h2>');
+      //   $releasesTitle.text('New Releases in Australia');
+      //   $('#contents').append($releasesTitle);
+
+      // var $categoriesContainer = $('<div></div>');
+      // $body.append($categoriesContainer);
+      // $categoriesContainer.on('click', 'p', function() {
+        $('#categoriesContainer').on('click', 'p', function() {
         var category = $(this).text();
         console.log('CATEGORY ', category);
         $.ajax({
@@ -113,65 +118,61 @@ $(document).ready(function(){
           type: "GET",
           dataType: 'json'
         }).done(function(results){
-          console.log(results);
-          // var playlists = results.body.playlists.items[0].id
           var uri = results.body.playlists.items[0].uri;
           var playlistName = results.body.playlists.items[0].name;
-          // console.log(results.body.playlists.items[0].id);
-          // console.log(playlistName);
           var $anchorplaylistName = $('<p>');
           $anchorplaylistName.text(playlistName);
-          $body.append($anchorplaylistName);
-          // var $anchorplaylists = $('<iframe>').attr('src', playlists)         
-          // console.log(playlists);
-          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+          $('#categoriesContainer').append($anchorplaylistName);
+          $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           // Get second playlist to turn up and title name
           var playlistNameOne = results.body.playlists.items[1].name;
           var $anchorplaylistNameOne = $('<p>');
           $anchorplaylistNameOne.text(playlistNameOne);
-          $body.append($anchorplaylistNameOne);
+          $('#categoriesContainer').append($anchorplaylistNameOne);
           var uriOne = results.body.playlists.items[1].uri;
-          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriOne + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+          $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uriOne + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           // Get third playlist to turn up and title name
           var playlistNameTwo = results.body.playlists.items[2].name;
           var $anchorplaylistNameTwo = $('<p>');
           $anchorplaylistNameTwo.text(playlistNameTwo);
-          $body.append($anchorplaylistNameTwo);
+          $('#categoriesContainer').append($anchorplaylistNameTwo);
           var uriTwo = results.body.playlists.items[2].uri;
-          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriTwo + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+          $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uriTwo + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
           // Get fourth playlist to turn up and title name
           var playlistNameThree = results.body.playlists.items[3].name;
           var $anchorplaylistNameThree = $('<p>');
           $anchorplaylistNameThree.text(playlistNameThree);
-          $body.append($anchorplaylistNameThree);
+          $('#categoriesContainer').append($anchorplaylistNameThree);
           var uriThree = results.body.playlists.items[3].uri;
-          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriThree + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
+          $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uriThree + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           // Get fifth playlist to turn up and title name
           var playlistNameFour = results.body.playlists.items[4].name;
           var $anchorplaylistNameFour = $('<p>');
           $anchorplaylistNameFour.text(playlistNameFour);
-          $body.append($anchorplaylistNameFour);
+          $('#categoriesContainer').append($anchorplaylistNameFour);
           var uriFour = results.body.playlists.items[4].uri;
-          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriFour + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+          $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uriFour + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
           // Get sixth playlist to turn up and title name
           var playlistNameFive = results.body.playlists.items[5].name;
           var $anchorplaylistNameFive = $('<p>');
           $anchorplaylistNameFive.text(playlistNameFive);
-          $body.append($anchorplaylistNameFive);
+          $('#categoriesContainer').append($anchorplaylistNameFive);
           var uriFive = results.body.playlists.items[5].uri;
-          $body.append('<iframe src="https://embed.spotify.com/?uri=' + uriFive + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
+          $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uriFive + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>');
         });
       });
       var $categoriesTitle = $('<h2>');
       $categoriesTitle.text('Choose from one of the top Categories in Australia to hear top Playlists');
-      $categoriesContainer.append($categoriesTitle);
+      // $categoriesContainer.append($categoriesTitle);
+      $('#categoriesContainer').append($categoriesTitle);
 
 
       var displayCategories = results.body.categories.items;
       displayCategories.forEach(function(element) {
         var anchorCategories = $('<p>');
         anchorCategories.text(element.id);
-        $categoriesContainer.append(anchorCategories);
+        // $categoriesContainer.append(anchorCategories);
+        $('#categoriesContainer').append(anchorCategories);
       });
     });
   });  

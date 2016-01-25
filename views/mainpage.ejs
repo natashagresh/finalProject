@@ -3,6 +3,10 @@
 <head>
   <title>WorldWide Spotify</title>
   <script src="/jquery/dist/jquery.js"></script>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css"></a>
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css">
+  <script src="bootstrap/dist/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="style.css">
   <script src="/js/main.js"></script> 
   <script src="/js/gb.js"></script>
   <script src="/js/sweden.js"></script>
@@ -19,23 +23,27 @@
 <body>
   <h1>Welcome to WorldWide Spotify</h1>
   <p>The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music!</p>
-  <button id="usa">U.S.A</button>
-  <button id="uk">Great Britain</button>
-  <button id="sweden">Sweden</button>
-  <button id="france">France</button>
-  <button id="germany">Germany</button>
-  <button id="spain">Spain</button>
-  <button id="turkey">Turkey</button>
-  <button id="brazil">Brazil</button>
-  <button id="australia">Australia</button>
-  <button id="mexico">Mexico</button>
-  <button id="colombia">Colombia</button>
-  <button id="singapore">Singapore</button>
-  <div id="contents">
+  <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
+  <div id="navbar-example">
+  <ul class="nav nav-tabs nav-justified">
+    <li role="presentation" id="usa"><a href="#"><img src="usa.png"> U.S.A</a></li>
+    <li role="presentation" id="uk"><a href="#"><img src="uk.png">   U.K</a></li>
+    <li role="presentation" id="sweden"><a href="#">Sweden</a></li>
+    <li role="presentation" id="france"><a href="#">France</a></li>
+    <li role="presentation" id="germany"><a href="#">Germany</a></li>
+    <li role="presentation" id="turkey"><a href="#">Turkey</a></li>
+    <li role="presentation" id="brazil"><a href="#">Brazil</a></li>
+    <li role="presentation" id="australia"><a href="#">Australia</a></li>
+    <li role="presentation" id="mexico"><a href="#">Mexico</a></li>
+    <li role="presentation" id="colombia"><a href="#">Colombia</a></li>
+    <li role="presentation" id="singapore"><a href="#">Singapore</a></li>
+  </ul>
   </div>
-  <div id='categoriesContainer'>
-  </div>
-  <div id="blah">
-  </div>
-</body>
+  <div id="container" data-spy="scroll" data-target="#secondContainer">
+    <div id="secondContainer">
+      <div id="contents"></div>
+      <div id="categoriesContainer"></div>
+    </div>
+  </div>  
+</body>   
 </html>

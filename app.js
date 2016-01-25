@@ -122,7 +122,6 @@ app.get('/api/oauth', function(req, res) {
 // Get a List of Categories in U.S.A
 app.get('/api/categories', function(req, res){
   spotifyApi.getCategories({
-      limit : 10,
       offset: 0,
       country: 'US',
   }).then(function(results) {
@@ -145,7 +144,18 @@ app.get('/api/getplaylists/:category', function(req, res) {
   }, function(error) {
     console.log('ERRRRRORRR ', error);
   });
-});  
+});
+
+// Follow a playlist (privately) in USA
+app.post('/api/followplaylist', function(req,res) {
+  spotifyApi.followPlaylist(req.params.playlist, {
+    'public' : false
+  }).then(function(data) {
+     console.log('Playlist successfully followed privately!');
+  }, function(err) {
+    console.log('Something went wrong!', err);
+  }); 
+});   
 
 ///Great Britain
 
@@ -163,7 +173,6 @@ app.get('/api/getplaylists/:category', function(req, res) {
 // Get a List of Categories in Great Britain
 app.get('/api/categoriesuk', function(req, res){
   spotifyApi.getCategories({
-      limit : 10,
       offset: 0,
       country: 'GB',
   }).then(function(results) {
@@ -204,7 +213,6 @@ app.get('/api/getplaylistsuk/:category', function(req, res) {
 // Get a List of Categories in Sweden
 app.get('/api/categoriessweden', function(req, res){
   spotifyApi.getCategories({
-      limit : 10,
       offset: 0,
       country: 'SE',
   }).then(function(results) {
@@ -245,7 +253,6 @@ app.get('/api/getplaylistssweden/:category', function(req, res) {
 // Get a List of Categories in France
 app.get('/api/categoriesfrance', function(req, res){
   spotifyApi.getCategories({
-      limit : 10,
       offset: 0,
       country: 'FR',
   }).then(function(results) {
@@ -286,7 +293,6 @@ app.get('/api/getplaylistsfrance/:category', function(req, res) {
 // Get a List of Categories in Germany
 app.get('/api/categoriesgermany', function(req, res){
   spotifyApi.getCategories({
-      limit : 10,
       offset: 0,
       country: 'DE',
   }).then(function(results) {
