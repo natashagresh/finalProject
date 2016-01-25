@@ -96,6 +96,7 @@ $(document).ready(function(){
   });
 
   $('#sweden').on('click', function(event){
+
     console.log('were contected')
     $.ajax({
       url:'/api/categoriessweden',
@@ -115,7 +116,7 @@ $(document).ready(function(){
           var playlistName = results.body.playlists.items[0].name;
           var $anchorplaylistName = $('<p>');
           $anchorplaylistName.text(playlistName);
-          $('#categoriesContainer').append($anchorplaylistName);
+          $('#categoriesContainer').html($anchorplaylistName);
           $('#categoriesContainer').append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           // Get second playlist to turn up and title name
           var playlistNameOne = results.body.playlists.items[1].name;
@@ -164,6 +165,7 @@ $(document).ready(function(){
       displayCategories.forEach(function(element) {
         var anchorCategories = $('<p>');
         anchorCategories.text(element.id);
+        $('#categoriesContent').remove(anchorCategories)
         $('#categoriesContent').append(anchorCategories);
 
 

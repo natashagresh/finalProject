@@ -113,7 +113,7 @@ $(document).ready(function(){
           var playlistName = results.body.playlists.items[0].name;
           var $anchorplaylistName = $('<p>');
           $anchorplaylistName.text(playlistName);
-          $('#categoriesPlaylists').html($anchorplaylistName);
+          $('#categoriesPlaylists').append($anchorplaylistName);
           $('#categoriesPlaylists').append('<iframe src="https://embed.spotify.com/?uri=' + uri + '" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>'); 
           // Get second playlist to turn up and title name
           var playlistNameOne = results.body.playlists.items[1].name;
@@ -162,6 +162,7 @@ $(document).ready(function(){
         var anchorCategories = $('<p>');
         anchorCategories.text(element.id);
         // $('#categoriesContent').html('');
+        // $('#categoriesContent').remove(anchorCategories)
         $('#categoriesContent').append(anchorCategories);
       });
     });  
