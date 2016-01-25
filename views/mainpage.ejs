@@ -5,17 +5,8 @@
   <script src="/jquery/dist/jquery.js"></script>
   <script src="semantic-ui/dist/semantic.min.js"></script>
   <script src="/js/main.js"></script> 
-  <script src="/js/gb.js"></script>
-  <script src="/js/sweden.js"></script>
-  <script src="/js/france.js"></script>
-  <script src="/js/germany.js"></script>
-  <script src="/js/spain.js"></script>
-  <script src="/js/turkey.js"></script>
-  <script src="/js/brazil.js"></script>
   <script src="/js/australia.js"></script>
-  <script src="/js/mexico.js"></script>
-  <script src="/js/colombia.js"></script>
-  <script src="/js/singapore.js"></script>
+  <script src="/handlebars/handlebars.js"></script>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="stylesheet" type="text/css" href="semantic-ui/dist/semantic.min.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Asap:400,700' rel='stylesheet' type='text/css'>
@@ -31,28 +22,46 @@
   </div> 
 
   <div id="ui twelve top-attatched buttons">
-    <button class="ui button" id="usa"><img src="/images/usa.png">U.S.A</button>
-    <button class="ui button" id="gb"><img src="/images/uk.png">U.K</button>
-    <button class="ui button" id="sweden"><img src="/images/sweden.png">Sweden</button>
-    <button class="ui button" id="france"><img src="/images/france.png">France</button>
-    <button class="ui button" id="spain"><img src="/images/spain.png">Spain</button>
-    <button class="ui button" id="germany"><img src="/images/germany.png">Germany</button>
-    <button class="ui button" id="turkey"><img src="/images/turkey.png">Turkey</button>
-    <button class="ui button" id="brazil"><img src="/images/brazil.png">Brazil</button>
-    <button class="ui button" id="australia"><img src="/images/australia.png">Australia</button>
-    <button class="ui button" id="mexico"><img src="/images/mexico.png">Mexico</button>
-    <button class="ui button" id="colombia"><img src="/images/colombia.png">Colombia</button>
-    <button class="ui button" id="singapore"><img src="/images/singapore.png">Singapore</button>
+    <button class="ui button country" data-country_code="US" id="usa"><img src="/images/usa.png">U.S.A</button>
+    <button class="ui button country" data-country_code="GB" id="gb"><img src="/images/uk.png">U.K</button>
+    <button class="ui button country" data-country_code="SE" id="sweden"><img src="/images/sweden.png">Sweden</button>
+    <button class="ui button country" data-country_code="FR" id="france"><img src="/images/france.png">France</button>
+    <button class="ui button country" data-country_code="ES" id="spain"><img src="/images/spain.png">Spain</button>
+    <button class="ui button country" data-country_code="DE" id="germany"><img src="/images/germany.png">Germany</button>
+    <button class="ui button country" data-country_code="TK" id="turkey"><img src="/images/turkey.png">Turkey</button>
+    <button class="ui button country" data-country_code="BR" id="brazil"><img src="/images/brazil.png">Brazil</button>
+    <button class="ui button country" data-country_code="AU" id="australia"><img src="/images/australia.png">Australia</button>
+    <button class="ui button country" data-country_code="MX" id="mexico"><img src="/images/mexico.png">Mexico</button>
+    <button class="ui button country" data-country_code="CO" id="colombia"><img src="/images/colombia.png">Colombia</button>
+    <button class="ui button country" data-country_code="SG" id="singapore"><img src="/images/singapore.png">Singapore</button>
   </div>
-    <div id="allContents">             
-      <div id="headerReleases"></div>     
-      <div id="contents"></div>
-      <div id="categoriesContainer">
-        <div id="headerCategories"></div>
-        <div id="categoriesContent"></div>
-        <div id="categoriesPlaylists"></div>
-      </div>          
-  </div>
+
+  
+  <div id="allContents"></div>
+  <div id="allCategories"></div>
+  <div id="allPlaylists"></div>
+ 
+
+    <script type="x-template">
+    <div id="headerReleases"></div>     
+    <div id="contents">
+    </div>
+    <div id="categoriesContainer">
+      <div id="headerCategories"></div>
+      <div id="categoriesContent"></div>
+      <div id="categoriesPlaylists"></div>
+    </div>
+    </script>
+  
+
+  <script type="x-template" id="spotify-iframe">
+    <iframe src="https://embed.spotify.com/?uri={{uri}}&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+  </script>
+
+  <script type="x-template" id="spotify-categories">
+    <ul>{{id}}</ul>
+  </script>
+
 
  
 </body>   
