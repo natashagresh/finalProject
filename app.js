@@ -87,7 +87,7 @@ app.get('/api/oauth', function(req, res) {
   });
 
 
-// Get a List of Categories in France
+// Get a List of Categories
 app.get('/api/categories/:country_code', function(req, res){
   var countryCode = req.params.country_code;
   console.log(req.params);
@@ -101,12 +101,12 @@ app.get('/api/categories/:country_code', function(req, res){
   });
 });
 
-// Get a list of Playlists from Categories in France.
+// Get a list of Playlists from Categories
 app.get('/api/getplaylists/:country_code/:category', function(req, res) {
   console.log('HITTING ROUTE');
   var countryCode = req.params.country_code;
   spotifyApi.getPlaylistsForCategory(req.params.category, {
-    country: country_code,
+    country: countryCode,
     limit: 6
   }).then(function(data) {
     console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);

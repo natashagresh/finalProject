@@ -28,7 +28,7 @@
     <button class="ui button country" data-country_code="FR" id="france"><img src="/images/france.png">France</button>
     <button class="ui button country" data-country_code="ES" id="spain"><img src="/images/spain.png">Spain</button>
     <button class="ui button country" data-country_code="DE" id="germany"><img src="/images/germany.png">Germany</button>
-    <button class="ui button country" data-country_code="TK" id="turkey"><img src="/images/turkey.png">Turkey</button>
+    <button class="ui button country" data-country_code="TR" id="turkey"><img src="/images/turkey.png">Turkey</button>
     <button class="ui button country" data-country_code="BR" id="brazil"><img src="/images/brazil.png">Brazil</button>
     <button class="ui button country" data-country_code="AU" id="australia"><img src="/images/australia.png">Australia</button>
     <button class="ui button country" data-country_code="MX" id="mexico"><img src="/images/mexico.png">Mexico</button>
@@ -59,7 +59,12 @@
   </script>
 
   <script type="x-template" id="spotify-categories">
-    <ul>{{id}}</ul>
+    <p class="category">{{id}}</p>
+  </script>
+
+  <script type="x-template" id="spotify-playlists">
+    <p>{{name}}</p>
+    <iframe src="https://embed.spotify.com/?uri={{uri}}" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
   </script>
 
 
