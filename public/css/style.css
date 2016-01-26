@@ -85,9 +85,11 @@
   text-align: center;
 }
 
-#beatles img{
-  background-attachment: fixed;
-  background-size: cover;
+#beatles{
+  text-align:center;
+  margin:0 auto;
+  padding-bottom: 10px;
+  background-color: black;
 }
 
 #body{
@@ -98,14 +100,20 @@
   padding: 30px;
   margin: 0 auto;
   text-align: center;
+ /* background-color: black;
+  color: white;*/
 /*  font-size: 40px;
   font-family:Montserrat;*/
+ 
 }
 
 #categories-title h2{
   padding: 30px;
   margin: 0 auto;
   text-align: center;
+ 
+/*  background-color: black;
+  color: white;*/
 /*  font-size: 40px;
   font-family:Montserrat;*/
 }
@@ -114,6 +122,8 @@
   padding: 30px;
   margin: 0 auto;
   text-align: center;
+/*  background-color: black;
+  color: white;*/
 /*  font-size: 40px;
   font-family:Montserrat;*/
 }
@@ -123,20 +133,27 @@
   text-align: center;
   padding:10px;
   display: inline;
+  background-color: black;
+  color: white;
 }
+
 
 #allCategories p{
   margin: 0 auto;
   text-align: center;
   padding:10px;
   display: inline;
+/*  background-color: black;
+  color: white;*/
 }
 
-#allPlaylists p{
+#allPlaylists{
   margin: 0 auto;
   text-align: center;
   padding:10px;
   display: inline;
+  background-color: black;
+  color: white;
 }
 
 #allPlaylists iframe{
@@ -156,4 +173,10 @@
   width: 100%;
 }
 
+.body{
+  background-image: url('http://www.droid-life.com/wp-content/uploads/2013/12/Screenshot-2013-12-11-at-1.46.31-PM.png');
+}
 
+.learn button{
+  border-color: black;
+}
