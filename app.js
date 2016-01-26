@@ -5,6 +5,7 @@ var app = express();
 var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var redirectUri;
 var scopes = ['playlist-read-private', 'playlist-read-collaborative', 'playlist-modify-public','playlist-modify-private', 'streaming', 'user-follow-modify', 'user-follow-read', 'user-library-read'];
 
 
@@ -19,11 +20,18 @@ app.use(express.static(__dirname + '/bower_components'));
 app.use(express.static(__dirname + '/node_modules'));
 app.set('view engine', 'ejs');
 
+if (process.env.spotifyRedirectUri.indexOf('127') > -1) {
+  redirectUri = 'http://' + process.env.spotifyRedirectUri;
+  console.log('REDIRECT ', redirectUri);
+} else {
+  redirectUri = 'https://' + process.env.spotifyRedirectUri;
+}
+
 // Setting Credentials for Spotify API
 var spotifyApi = new SpotifyWebApi({
   clientId : process.env.clientId,
   clientSecret : process.env.clientSecret,
-  redirectUri : 'https://peaceful-hollows-73177.herokuapp.com/authorizespotify'
+  redirectUri : redirectUri
 });
 
 // The Authorization URL

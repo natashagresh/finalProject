@@ -10,8 +10,9 @@
   padding-top: 50px;
   padding-bottom: 100px;
 };
-
-
+#iframe {
+  text-align: center;
+}
 #container h2{
  padding-top: 50px;
  padding-bottom: 50px;
@@ -56,7 +57,7 @@
   padding:20px;
 };
 
-#categoriesContainer{
+/*#categoriesContainer{
   position: relative;
   overflow-y: scroll;
   margin: 0 auto;
@@ -66,14 +67,93 @@
 #categoriesContainer p {
   display: inline;
   padding:5px;
-};
+};*/
 
 #navbar-example{
   background-color: black;
 }
 
-#allContents{
+/*#allContents{
   position: relative;
   overflow-y: scroll;
+}*/
+
+.learn-more{
+  width: 75%;
+  padding: 25px;
+  margin: 0 auto;
+  text-align: center;
 }
+
+#beatles img{
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#body{
+/*  background-color:black;*/
+}
+
+#new-releases h2{
+  padding: 30px;
+  margin: 0 auto;
+  text-align: center;
+/*  font-size: 40px;
+  font-family:Montserrat;*/
+}
+
+#categories-title h2{
+  padding: 30px;
+  margin: 0 auto;
+  text-align: center;
+/*  font-size: 40px;
+  font-family:Montserrat;*/
+}
+
+#playlists-title h2{
+  padding: 30px;
+  margin: 0 auto;
+  text-align: center;
+/*  font-size: 40px;
+  font-family:Montserrat;*/
+}
+
+#allContents{
+  margin: 0 auto;
+  text-align: center;
+  padding:10px;
+  display: inline;
+}
+
+#allCategories p{
+  margin: 0 auto;
+  text-align: center;
+  padding:10px;
+  display: inline;
+}
+
+#allPlaylists p{
+  margin: 0 auto;
+  text-align: center;
+  padding:10px;
+  display: inline;
+}
+
+#allPlaylists iframe{
+  margin: 0 auto;
+  text-align: center;
+  padding:10px;
+  display: inline;
+}
+
+.country{
+  font-size:20px;
+  padding: 5px;
+}
+
+.top{
+  background-color: black;
+  width: 100%;
+}
+
 

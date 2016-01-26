@@ -7,6 +7,7 @@ $(document).ready(function(){
   var countryData;
    $('.country').on('click', function(event){
       // specific country
+
       countryData =  $(event.currentTarget).data();
       $.ajax({
         url: "/api/releases/" + countryData.country_code,
@@ -15,6 +16,11 @@ $(document).ready(function(){
       }).done(function(response){
         
         console.log(response);
+
+        //   var newReleases = ('<p>');
+        // $('allContents').text('New Releases');
+        // newReleases.append()
+
         
         var items = response.body.albums.items;
         
@@ -54,7 +60,7 @@ $(document).ready(function(){
       type: "GET",
       dataType: 'JSON'
     }).done(function(response){
-        console.log(response);
+        console.log(response);  
 
       var playlists = response.body.playlists.items;
       $('#allPlaylists').html('');

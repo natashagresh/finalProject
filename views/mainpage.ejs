@@ -11,51 +11,79 @@
   <link rel="stylesheet" type="text/css" href="semantic-ui/dist/semantic.min.css">
   <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Asap:400,700' rel='stylesheet' type='text/css'>
 </head>
-<body>
-  <div id="container">
-    <img src="http://static-5.app4smart.me/i/icon/240/f2x/mnc/ipz/spotify-music.png" height= '60' width='60'>      
-    <h1>WorldWide Spotify</h1>
-    <img src="/images/spotify.png">
-    <h1> Welcome to WorldWide Spotify</h1>
-    <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!</p>
-    <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
-  </div> 
+<body id="body">
+    <div class="ui large secondary inverted pointing menu">
+    <img class="active item" src="http://static-5.app4smart.me/i/icon/240/f2x/mnc/ipz/spotify-music.png" height= '80' width='90'> 
+    <h1 class="ui header">WorldWide Spotify</h1>
 
-  <div id="ui twelve top-attatched buttons">
-    <button class="ui button country" data-country_code="US" id="usa"><img src="/images/usa.png">U.S.A</button>
-    <button class="ui button country" data-country_code="GB" id="gb"><img src="/images/uk.png">U.K</button>
-    <button class="ui button country" data-country_code="SE" id="sweden"><img src="/images/sweden.png">Sweden</button>
-    <button class="ui button country" data-country_code="FR" id="france"><img src="/images/france.png">France</button>
-    <button class="ui button country" data-country_code="ES" id="spain"><img src="/images/spain.png">Spain</button>
-    <button class="ui button country" data-country_code="DE" id="germany"><img src="/images/germany.png">Germany</button>
-    <button class="ui button country" data-country_code="TR" id="turkey"><img src="/images/turkey.png">Turkey</button>
-    <button class="ui button country" data-country_code="BR" id="brazil"><img src="/images/brazil.png">Brazil</button>
-    <button class="ui button country" data-country_code="AU" id="australia"><img src="/images/australia.png">Australia</button>
-    <button class="ui button country" data-country_code="MX" id="mexico"><img src="/images/mexico.png">Mexico</button>
-    <button class="ui button country" data-country_code="CO" id="colombia"><img src="/images/colombia.png">Colombia</button>
-    <button class="ui button country" data-country_code="SG" id="singapore"><img src="/images/singapore.png">Singapore</button>
+        <button class="learn">Learn More</button>
+    <div class="ui modal learn-more">
+      <div class="learn-more">
+
+      <h1> Welcome to WorldWide Spotify</h1>
+      <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!</p>
+    </div>
+    </div>
+    <p>Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
+
+  </div>
+<!--   <div id="container">
+        
+
+
+  </div> -->
+  <div id="beatles"><img src= "/images/newyork.png"></img></div> 
+<div class="ui fluid search selection dropdown">
+  <input type="hidden" name="country">
+  <i class="dropdown icon"></i>
+  <div class="default text">Select Country</div>
+  <div class="menu">
+
+ <!--  <div id="ui twelve top-attatched buttons" class="ui container" class="buttons"> -->
+   <!--  <div class="ui large secondary inverted pointing menu"> -->
+
+
+    <div class="country" class="item" data-country_code="US" id="usa"><i class="us flag"></i>U.S.A</div>
+    <div class="country" class="item" data-country_code="GB" id="gb"><i class="gb flag"></i>U.K</div>
+    <div class="country" class="item" data-country_code="SE" id="sweden"><i class="se flag"></i>Sweden</div>
+    <div class="country" class="item"data-country_code="FR" id="france"><i class="fr flag"></i>France</div>
+    <div class="country" class="item"data-country_code="ES" id="spain"><i class="es flag"></i>Spain</div>
+    <div class="country" class="item" data-country_code="DE" id="germany"><i class="de flag"></i>Germany</div>
+    <div class="country" class="item" data-country_code="TR" id="turkey"><i class="tr flag"></i>Turkey</div>
+    <div class="country" class="item" data-country_code="BR" id="brazil"><i class="br flag"></i>Brazil</div>
+    <div class="country" class="item" data-country_code="AU" id="australia"><i class="au flag"></i>Australia</div>
+    <div class="country" class="item" data-country_code="MX" id="mexico"><i class="mx flag"></i>Mexico</div>
+    <div class="country" class="item" data-country_code="CO" id="colombia"><i class="co flag"></i>Colombia</div>
+    <div class="country" class="item" data-country_code="SG" id="singapore"><i class="sg flag"></i>Singapore</div>
+    </div>
+  </div>
+  </div>
   </div>
 
-  
-  <div id="allContents"></div>
+
+  <div id="new-releases"><h2 class="ui header">New Releases</h2></div>
+  <div id="allContents" class="ui large images"></div>
+  <div id="categories-title"><h2 class="ui header">Press a category to get a list of playlists</h2></div>
   <div id="allCategories"></div>
+  <div id="playlists-title"><h2 class="ui header">Playlists</h2></div>
   <div id="allPlaylists"></div>
  
 
     <script type="x-template">
     <div id="headerReleases"></div>     
-    <div id="contents">
-    </div>
+    <div id="contents"></div>
     <div id="categoriesContainer">
       <div id="headerCategories"></div>
-      <div id="categoriesContent"></div>
-      <div id="categoriesPlaylists"></div>
+      <div id="categories-content"></div>
+      <div id="categories-playlists"></div>
     </div>
     </script>
   
 
   <script type="x-template" id="spotify-iframe">
-    <iframe src="https://embed.spotify.com/?uri={{uri}}&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    <div id="iframe">
+      <iframe src="https://embed.spotify.com/?uri={{uri}}&view=coverart" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
+    </div>
   </script>
 
   <script type="x-template" id="spotify-categories">

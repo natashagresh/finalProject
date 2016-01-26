@@ -1,9 +1,21 @@
-body {
-  /*background-image: url('http://c.fastcompany.net/multisite_files/fastcompany/poster/2013/07/3014684-poster-p-4-more-ways-to-monetize-your-music-without-spotify.jpg');*/
-/*  background-image: url('http://electroshine.tv/common/assets/ecshine/images/gen-bank/audience/AUS13_AudShow50.jpg')*/
+.body {
+  /*background-image: url('../images/background.jpg');*/
+  background-image: url('http://mycolorscreen.com/wp-content/uploads/wallpapers_2012/219852/nTELIL1_1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .jumbotron{
   margin: 0 auto;
   text-align: center;
+  width:75%;
+  height: 700px;
+  margin: 0 auto;
+}
+
+.welcome-container { 
+  margin-top: 100px;
+  background-color: rgba(150,150,150,.2);
+  border-radius: 10px;
+  padding: 50px;
 }
