@@ -1,4 +1,4 @@
-.body {
+body {
   /*background-image: url('../images/background.jpg');*/
   background-image: url('http://mycolorscreen.com/wp-content/uploads/wallpapers_2012/219852/nTELIL1_1.jpg');
   background-size: cover;
@@ -15,7 +15,29 @@
 
 .welcome-container { 
   margin-top: 100px;
-  background-color: rgba(150,150,150,.2);
-  border-radius: 10px;
+  background-color: rgba(133,36,78,.2);
+  border-radius: 6px;
   padding: 50px;
+  color: white;
 }
+
+.welcome-container button {
+  color:black
+}
+
+#video1{
+  height: 600px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  background-color: black;
+}
+

@@ -29,6 +29,14 @@ $(document).ready(function(){
   })
 ;
  
+  $('#video2').on('click', function(event){
+      console.log("clicked on video")
+      $('.fullscreen.modal')
+        .modal('show');
+  })
+
+
+
 });
 
 

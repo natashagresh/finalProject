@@ -31,8 +31,8 @@ if (process.env.spotifyRedirectUri.indexOf('127') > -1) {
 var spotifyApi = new SpotifyWebApi({
   clientId : process.env.clientId,
   clientSecret : process.env.clientSecret,
-  // redirectUri : redirectUri
-  redirectUri :"https://peaceful-hollows-73177.herokuapp.com/authorizespotify"
+  redirectUri : redirectUri
+  // redirectUri :"https://peaceful-hollows-73177.herokuapp.com/authorizespotify"
 });
 
 // The Authorization URL
