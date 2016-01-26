@@ -87,7 +87,7 @@ app.get('/api/oauth', function(req, res) {
  // Retrieve new releases
   app.get('/api/releases/:country_code', function(req,res){
     var countryCode = req.params.country_code;
-    spotifyApi.getNewReleases({ limit : 10, offset: 0, country: countryCode }).then(function(results) {
+    spotifyApi.getNewReleases({offset: 0, country: countryCode }).then(function(results) {
       res.json(results);
     }, function(error) {
        console.log("Something went wrong!", error);
@@ -116,7 +116,6 @@ app.get('/api/getplaylists/:country_code/:category', function(req, res) {
   var countryCode = req.params.country_code;
   spotifyApi.getPlaylistsForCategory(req.params.category, {
     country: countryCode,
-    limit: 6
   }).then(function(data) {
     console.log('PLAYLISTS FROM CATEGORY ', data.body.playlists.items[0].tracks);
     res.json(data);
