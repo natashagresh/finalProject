@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 var spotifyApi = new SpotifyWebApi({
   clientId : process.env.clientId,
   clientSecret : process.env.clientSecret,
-  redirectUri : 'https://peaceful-hollows-73177.herokuapp.com//authorizespotify'
+  redirectUri : 'https://peaceful-hollows-73177.herokuapp.com/authorizespotify'
 });
 
 // The Authorization URL
