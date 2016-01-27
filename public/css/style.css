@@ -1,8 +1,5 @@
 #container{
-/*  position: relative;
-  overflow-y: scroll;*/
   height:600px;
-  /*background-image: url('https://i.ytimg.com/vi/4zDowqVVOLA/maxresdefault.jpg');*/
   color:black;
   font-family: Montserrat;
   text-align: center;
@@ -27,7 +24,6 @@
 };
 
 .page-header img{
-/*  padding-top: 20px;*/
 };
 
 #contents h2{
@@ -37,46 +33,6 @@
 #container h2{
   padding-bottom: 50px;
 };
-
-.modal-content{
-  margin: 0 auto;
-  text-align: center;
-};
-
-.modal-content h1{
-  font-size: 25px;
-  color:black;
-};
-
-.modal-content p{
-  font-size: 20px;
-};
-
-/*#contents iframe{
-  display: inline;
-  padding:20px;
-};
-*/
-/*#categoriesContainer{
-  position: relative;
-  overflow-y: scroll;
-  margin: 0 auto;
-  text-align: center;
-};
-
-#categoriesContainer p {
-  display: inline;
-  padding:5px;
-};*/
-
-#navbar-example{
-  background-color: black;
-}
-
-/*#allContents{
-  position: relative;
-  overflow-y: scroll;
-}*/
 
 .learn-more{
   width: 75%;
@@ -92,30 +48,16 @@
   background-color: black;
 }
 
-#body{
-/*  background-color:black;*/
-}
-
 #new-releases h2{
   padding: 30px;
   margin: 0 auto;
-  text-align: center;
-/*  background-color: black;
-  color: white;
-  font-size: 40px;
-  font-family:Montserrat;*/
- 
+  text-align: center; 
 }
 
 #categories-title h2{
   padding: 30px;
   margin: 0 auto;
   text-align: center;
- 
-/*  background-color: black;
-  color: white;
-/*  font-size: 40px;
-  font-family:Montserrat;*/
 };
 
 #playlists-title h2{
@@ -124,11 +66,26 @@
   text-align: center;
 };
 
-
-#allCategories button{
+#allCategories{
   text-align: center;
   padding-left:50px;
   padding-right:50px;
+  margin: 0 auto;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  margin-bottom:40px;
+}
+
+#allCategories button{
+  text-align: center;
+  margin-left:30px;
+  margin-right:30px;
+  border-radius: 25px;
+
+
 };
 
 
@@ -210,8 +167,11 @@
 }
 
 #allContents{
-  display: inline-block;
-/*  margin: 0 auto;*/
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .iframe{
@@ -230,14 +190,15 @@
   text-align:center;
 }
 
-#contents{
-  /*margin-left:5px;*/
-/*  margin-right: 0;*/
+.category{
+  text-align:center;
+  padding: 5px;
 }
 
-/*#categoriesContent{
-  margin-left: 20px;
-  margin-right: 20px;
-}*/
-
-
+#allPlaylists{
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
