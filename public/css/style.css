@@ -39,20 +39,20 @@
   padding: 25px;
   margin: 0 auto;
   text-align: center;
-}
+};
 
 #beatles{
   text-align:center;
   margin:0 auto;
   padding-bottom: 10px;
   background-color: black;
-}
+};
 
 #new-releases h2{
   padding: 30px;
   margin: 0 auto;
   text-align: center; 
-}
+};
 
 #categories-title h2{
   padding: 30px;
@@ -77,78 +77,75 @@
   justify-content: space-between;
   padding-bottom: 40px;
   margin-bottom:40px;
-}
+};
 
 #allCategories button{
   text-align: center;
   margin-left:30px;
   margin-right:30px;
   border-radius: 25px;
-
-
 };
-
 
 #allPlaylists iframe{
   margin: 0 auto;
   text-align: center;
   padding:10px;
   display: inline;
-}
+};
 
 .country{
   font-size:20px;
   padding: 5px;
-}
+};
 
 .country:hover{
    cursor: pointer;
-}
+};
 
 .top{
   background-color: black;
   width: 100%;
-}
+};
 
 .body{
   background-image: url('http://www.droid-life.com/wp-content/uploads/2013/12/Screenshot-2013-12-11-at-1.46.31-PM.png');
-}
+};
 
 .learn button{
   border-color: black;
-}
+};
 
 #video{
     text-align: center;
     height:400px;
     width: 33.222222%;
     left: 0;
-}
+};
 
 #video2 {
   text-align: left;
   height:400px;
   width: 33%;
-}
+};
 
 #video2:hover{
   cursor: pointer;
-}
+};
 
 #video3 {
   text-align: right;
   height:400px;
   width: 33%;
-}
+};
 
 .signOut {
   margin-top: 38px;
   margin-right: 5px;
-}
+};
 
 .beatles{
   background-color: black;
-}
+};
 
 .videoModal {
   height: 600px;
@@ -164,7 +161,7 @@
   transform: translateX(-50%) translateY(-50%);
   background-size: cover;
   background-color: black;
-}
+};
 
 #allContents{
     margin: 0 auto;
@@ -172,28 +169,27 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+};
 
 .iframe{
   display: inline-block;
-}
+};
 
 .button{
   padding: 10px;
   font-size: 15px;
   display: inline-block;
   text-align: center;
-
-}
+};
 
 .header{
   text-align:center;
-}
+};
 
 .category{
   text-align:center;
   padding: 5px;
-}
+};
 
 #allPlaylists{
     margin: 0 auto;
@@ -201,4 +197,4 @@
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
-}
+};
