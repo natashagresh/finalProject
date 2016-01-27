@@ -52,11 +52,11 @@
   font-size: 20px;
 };
 
-#contents iframe{
+/*#contents iframe{
   display: inline;
   padding:20px;
 };
-
+*/
 /*#categoriesContainer{
   position: relative;
   overflow-y: scroll;
@@ -125,14 +125,12 @@
 };
 
 
-#allCategories p{
-  margin: 0 auto;
+#allCategories button{
   text-align: center;
-  padding:10px;
-  display: inline;
-/*  background-color: black;
-  color: white;*/
-}
+  padding-left:50px;
+  padding-right:50px;
+};
+
 
 #allPlaylists iframe{
   margin: 0 auto;
@@ -144,6 +142,10 @@
 .country{
   font-size:20px;
   padding: 5px;
+}
+
+.country:hover{
+   cursor: pointer;
 }
 
 .top{
@@ -158,7 +160,6 @@
 .learn button{
   border-color: black;
 }
-
 
 #video{
     text-align: center;
@@ -207,3 +208,36 @@
   background-size: cover;
   background-color: black;
 }
+
+#allContents{
+  display: inline-block;
+/*  margin: 0 auto;*/
+}
+
+.iframe{
+  display: inline-block;
+}
+
+.button{
+  padding: 10px;
+  font-size: 15px;
+  display: inline-block;
+  text-align: center;
+
+}
+
+.header{
+  text-align:center;
+}
+
+#contents{
+  /*margin-left:5px;*/
+/*  margin-right: 0;*/
+}
+
+/*#categoriesContent{
+  margin-left: 20px;
+  margin-right: 20px;
+}*/
+
+
