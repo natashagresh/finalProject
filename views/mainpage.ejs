@@ -18,18 +18,13 @@
         <div class="right item">
         <button class="learn ui green button">Learn More</button>
 
-    <div class="ui modal learn-more">
-      <div class="learn-more">
-
-      <h1> Welcome to WorldWide Spotify</h1>
-      <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!</p>
-    </div>
-    </div>
   
-    
+
+   
     </div>
     <p class="signOut">Sign out of <a href="https://www.spotify.com/">Spotify</a></p>
   </div>
+ 
 
 <div id="beatles">
     <video autoplay loop muted id="video">
@@ -45,50 +40,71 @@
     </video>
 </div>
 
-<div class="ui fullscreen modal">
-    <img class="videoModal" src="video/beatle2.gif"> 
-</div>    
 
-<div class="ui fluid search selection dropdown">
+<div class="ui fullscreen modal">
+  <div class="ui modal learn-more">
+      <div class="learn-more">
+
+      <h1> Welcome to WorldWide Spotify</h1>
+      <p> The way this works is that you select the country in which you want to listen to music in and then pick a category to get a list of playlists or just listen to the new releases. Music is updated in realtime so you will always have access to the lastest music! Enjoy!</p>
+    </div>
+    </div>
+    <img class="videoModal" src="video/beatle2.gif"> 
+</div> 
+
+
+<div class="ui fluid labeled search selection dropdown">
   <input type="hidden" name="country">
   <i class="dropdown icon"></i>
   <div class="default text">Select Country</div>
   <div class="menu">
 
-    <div class="country" class="item" data-country_code="US" id="usa"><i class="us flag"></i>U.S.A</div>
-    <div class="country" class="item" data-country_code="GB" id="gb"><i class="gb flag"></i>U.K</div>
-    <div class="country" class="item" data-country_code="SE" id="sweden"><i class="se flag"></i>Sweden</div>
-    <div class="country" class="item"data-country_code="FR" id="france"><i class="fr flag"></i>France</div>
-    <div class="country" class="item" data-country_code="BE" id="belgium"><i class="be flag"></i>Belgium</div>
-    <div class="country" class="item" data-country_code="IT" id="italy"><i class="it flag"></i>Italy</div>
-    <div class="country" class="item"data-country_code="ES" id="spain"><i class="es flag"></i>Spain</div>
-    <div class="country" class="item" data-country_code="DE" id="germany"><i class="de flag"></i>Germany</div>
-    <div class="country" class="item" data-country_code="TR" id="turkey"><i class="tr flag"></i>Turkey</div>
-    <div class="country" class="item" data-country_code="GR" id="greece"><i class="gr flag"></i>Greece</div>
-    <div class="country" class="item" data-country_code="NO" id="norway"><i class="no flag"></i>Norway</div>
-    <div class="country" class="item" data-country_code="FI" id="finland"><i class="fi flag"></i>Finland</div>
-    <div class="country" class="item" data-country_code="BR" id="brazil"><i class="br flag"></i>Brazil</div>
-    <div class="country" class="item" data-country_code="AU" id="australia"><i class="au flag"></i>Australia</div>
-    <div class="country" class="item" data-country_code="MX" id="mexico"><i class="mx flag"></i>Mexico</div>
-    <div class="country" class="item" data-country_code="CO" id="colombia"><i class="co flag"></i>Colombia</div>
-    <div class="country" class="item" data-country_code="SG" id="singapore"><i class="sg flag"></i>Singapore</div>
-    <div class="country" class="item" data-country_code="PE" id="peru"><i class="pe flag"></i>Peru</div>
-    <div class="country" class="item" data-country_code="NZ" id="new zealand"><i class="nz flag"></i>New Zealand</div>
-    <div class="country" class="item" data-country_code="MY" id="malaysia"><i class="my flag"></i>Malaysia</div>
-    <div class="country" class="item" data-country_code="SV" id="el salvador"><i class="sv flag"></i>El Salvador</div>
-    <div class="country" class="item" data-country_code="NI" id="nicaragua"><i class="ni flag"></i>Nicaragua</div>
-    <div class="country" class="item" data-country_code="PT" id="portugal"><i class="nz flag"></i>Portugal</div>
-    <div class="country" class="item" data-country_code="UY" id="uruguay"><i class="uy flag"></i>Uruguay</div>
-    <div class="country" class="item" data-country_code="TW" id="taiwan"><i class="tw flag"></i>Taiwan</div>
+    <div class="country item" data-value="us" data-country_code="US" id="usa"><i class="us flag"></i>U.S.A</div>
+    <div class="country item" data-value="gb" data-country_code="GB" id="gb"><i class="gb flag"></i>U.K</div>
+    <div class="country item" data-value="se" data-country_code="SE" id="sweden"><i class="se flag"></i>Sweden</div>
+    <div class="country item" data-value="fr" data-country_code="FR" id="france"><i class="fr flag"></i>France</div>
+    <div class="country item" data-country_code="BE" id="belgium"><i class="be flag"></i>Belgium</div>
+    <div class="country item" data-country_code="IT" id="italy"><i class="it flag"></i>Italy</div>
+    <div class="country item"data-country_code="ES" id="spain"><i class="es flag"></i>Spain</div>
+    <div class="country item" data-country_code="DE" id="germany"><i class="de flag"></i>Germany</div>
+    <div class="country item" data-country_code="TR" id="turkey"><i class="tr flag"></i>Turkey</div>
+    <div class="country item" data-country_code="GR" id="greece"><i class="gr flag"></i>Greece</div>
+    <div class="country item" data-country_code="NO" id="norway"><i class="no flag"></i>Norway</div>
+    <div class="country item" data-country_code="FI" id="finland"><i class="fi flag"></i>Finland</div>
+    <div class="country item" data-country_code="BR" id="brazil"><i class="br flag"></i>Brazil</div>
+    <div class="country item" data-country_code="AU" id="australia"><i class="au flag"></i>Australia</div>
+    <div class="country item" data-country_code="MX" id="mexico"><i class="mx flag"></i>Mexico</div>
+    <div class="country item" data-country_code="CO" id="colombia"><i class="co flag"></i>Colombia</div>
+    <div class="country item" data-country_code="SG" id="singapore"><i class="sg flag"></i>Singapore</div>
+    <div class="country item" data-country_code="PE" id="peru"><i class="pe flag"></i>Peru</div>
+    <div class="country item" data-country_code="NZ" id="new zealand"><i class="nz flag"></i>New Zealand</div>
+    <div class="country item" data-country_code="MY" id="malaysia"><i class="my flag"></i>Malaysia</div>
+    <div class="country item" data-country_code="SV" id="el salvador"><i class="sv flag"></i>El Salvador</div>
+    <div class="country item" data-country_code="NI" id="nicaragua"><i class="ni flag"></i>Nicaragua</div>
+    <div class="country item" data-country_code="PT" id="portugal"><i class="nz flag"></i>Portugal</div>
+    <div class="country item" data-country_code="UY" id="uruguay"><i class="uy flag"></i>Uruguay</div>
+    <div class="country item" data-country_code="TW" id="taiwan"><i class="tw flag"></i>Taiwan</div>
     </div>
   </div>
   
+<!--   <div class="ui fluid search selection dropdown">
+    <input type="hidden" name="country">
+    <i class="dropdown icon"></i>
+    <div class="default text">Select Country</div>
+    <div class="menu">
+      <div class="country item" data-value="us" id="usa"><i class="us flag"></i>U.S.A</div>
+      <div class="country item" data-value="gb" id="gb"><i class="gb flag"></i>U.K</div>
+      <div class="country item" data-value="se" id="sweden"><i class="se flag"></i>Sweden</div>
+    </div>
+  </div> -->
+
   <div id="new-releases"><h2 class="ui grey header">New Releases</h2></div>
   <div id="allContents" class="allContents"></div>
   <div id="categories-title"><h2 class="ui grey header">Press a category to get a list of playlists</h2></div>
   <div id="allCategories"></div>
   <div id="playlists-title"><h2 class="ui grey header">Playlists</h2></div>
   <div id="allPlaylists"></div>
+
  
     <script type="x-template">
     <div id="headerReleases"></div>     

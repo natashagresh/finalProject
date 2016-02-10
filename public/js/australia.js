@@ -5,6 +5,12 @@ $(document).ready(function(){
   var template = Handlebars.compile($('#spotify-iframe').html());
   var $body = $('body');
   var countryData;
+  var newReleases = $('#new-releases');
+  newReleases.hide();
+  var categoriesTitle = $('#categories-title');
+  categoriesTitle.hide();
+  var playlistsTitle = $('#playlists-title');
+  playlistsTitle.hide();
    $('.country').on('click', function(event){
       // specific country
 
@@ -17,9 +23,8 @@ $(document).ready(function(){
         
         console.log(response);
 
-        //   var newReleases = ('<p>');
-        // $('allContents').text('New Releases');
-        // newReleases.append()
+        newReleases.slideDown("slow");
+        categoriesTitle.slideDown("slow");
 
         
         var items = response.body.albums.items;
@@ -62,6 +67,7 @@ $(document).ready(function(){
     }).done(function(response){
         console.log(response);  
 
+        playlistsTitle.slideDown("slow");
       var playlists = response.body.playlists.items;
       $('#allPlaylists').html('');
       playlists.forEach(function(playlist){
